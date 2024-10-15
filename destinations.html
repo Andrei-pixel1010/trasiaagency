@@ -16,24 +16,29 @@
         header {
             background: #926f34; /* Gold header */
             color: white;
-            padding: 20px 40px;
+            padding: 20px 10px; /* Adjusted padding for smaller screens */
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         header .logo {
-            font-size: 1.8em;
+            font-size: 1.5em; /* Slightly smaller logo size */
             font-weight: bold;
+        }
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         nav a {
             color: white;
             text-decoration: none; /* No underline */
-            margin: 0 20px;
+            margin: 0 10px;
             font-weight: 500;
         }
         nav a:hover {
-            text-decoration: none; /* No underline on hover */
+            text-decoration: underline; /* Add underline on hover for clarity */
         }
         .section {
             padding: 20px;
@@ -41,14 +46,14 @@
         }
         .destinations {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr)); /* Responsive grid */
-            gap: 40px; /* Space between cards */
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* More responsive grid */
+            gap: 20px; /* Reduced gap for smaller screens */
         }
         .destination {
             background-size: cover;
             background-position: center;
             color: #fffff9;
-            padding: 50px 20px; /* More padding for larger text */
+            padding: 40px 10px; /* Adjusted padding for smaller screens */
             border-radius: 10px;
             text-align: left;
             position: relative;
@@ -61,11 +66,11 @@
             transform: scale(1.05); /* Slight zoom effect on hover */
         }
         .destination h2 {
-            font-size: 2.2em; /* Title size */
+            font-size: 1.8em; /* Reduced title size */
             margin: 0;
         }
         .destination p {
-            font-size: 1.2em; /* Description size */
+            font-size: 1em; /* Reduced description size */
             margin-top: 10px;
         }
         footer {
@@ -73,6 +78,22 @@
             color: white;
             padding: 10px 20px;
             text-align: center;
+        }
+
+        /* Media Queries for mobile responsiveness */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 5px; /* Further reduce padding */
+            }
+            nav a {
+                margin: 0 5px; /* Less margin for nav items */
+            }
+            .destination h2 {
+                font-size: 1.5em; /* Smaller title on mobile */
+            }
+            .destination p {
+                font-size: 0.9em; /* Smaller description on mobile */
+            }
         }
     </style>
 </head>
@@ -137,18 +158,4 @@
             </a>
             <a href="Khaoyai.html" class="destination" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQj5ICYitEerEAJbfXkBJFes_UuIsdUcWyOYA&s');">
                 <h2>Khao Yai</h2>
-                <p>Discover rock climbing and beautiful beach scenery.</p>
-            </a>
-            <a href="Phuket.html" class="destination" style="background-image: url('https://www.fivestars-thailand.com/images/article/display/a_1709046776.jpg');">
-                <h2>Phuket</h2>
-                <p>Discover rock climbing and beautiful beach scenery.</p>
-            </a>
-        </div>
-    </div>
-
-    <footer>
-        <p>Contact us: Trasiaagency@gmail.com | +40727300463</p>
-        <p>&copy; 2024 Trasia Agency. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+                <p>Discover rock climbing and beautiful beach scenery.</p
