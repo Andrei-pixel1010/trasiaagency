@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations in Thailand</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9; /* Light background for contrast */
+        }
+        header {
+            background: #926f34; /* Gold header */
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        header .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+        nav a {
+            color: white;
+            text-decoration: none; /* No underline */
+            margin: 0 20px;
+            font-weight: 500;
+        }
+        nav a:hover {
+            text-decoration: none; /* No underline on hover */
+        }
+        .section {
+            padding: 20px;
+            text-align: center;
+        }
+        .destinations {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr)); /* Responsive grid */
+            gap: 40px; /* Space between cards */
+        }
+        .destination {
+            background-size: cover;
+            background-position: center;
+            color: #fffff9;
+            padding: 50px 20px; /* More padding for larger text */
+            border-radius: 10px;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            cursor: pointer; /* Indicate it's clickable */
+            text-decoration: none; /* No underline for links */
+        }
+        .destination:hover {
+            transform: scale(1.05); /* Slight zoom effect on hover */
+        }
+        .destination h2 {
+            font-size: 2.2em; /* Title size */
+            margin: 0;
+        }
+        .destination p {
+            font-size: 1.2em; /* Description size */
+            margin-top: 10px;
+        }
+        footer {
+            background: #926f34; /* Gold footer */
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Trasia Agency</div>
+        <nav>
+            <a href="Trasia1.html" class="cta-button">Home</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="#">Services</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    
+    <div class="section">
+        <h1 style="padding: 20px;">Top 12 Destinations in Thailand</h1>
+        <div class="destinations">
+            <a href="Chiangmai.html" class="destination" style="background-image: url('https://www.furama.com/images/FCM-Home.jpg');">
+                <h2>Chiang Mai</h2>
+                <p>Explore the cultural heart of Thailand, famous for its temples and beautiful landscapes.</p>
+            </a>
+            <a href="Bangkok.html" class="destination" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD528U0O7gIKTwadlCLcdro-Np2SotCJNvsA&s');">
+                <h2>Bangkok</h2>
+                <p>Experience the vibrant city life with bustling markets and stunning palaces.</p>
+            </a>
+            <a href="phiphi.html" class="destination" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmpogvpi4TSsfWKakWIFe5HRcnyG6_3_kxkA&s');">
+                <h2>Phi Phi Islands</h2>
+                <p>Relax on beautiful beaches and enjoy snorkeling in crystal-clear waters.</p>
+            </a>
+            <a href="krabi.html" class="destination" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJSvOU4leSsEF8EhitYs1DLyB9nmJ8EVOmmA&s');">
+                <h2>Krabi</h2>
+                <p>Discover breathtaking cliffs and beautiful beaches, perfect for adventure seekers.</p>
+            </a>
+            <a href="koh_samui.html" class="destination" style="background-image: url('https://content.r9cdn.net/rimg/dimg/75/a7/44202281-city-56280-162c107fc7d.jpg?width=1366&height=768&xhint=1536&yhint=1033&crop=true');">
+                <h2>Koh Samui</h2>
+                <p>Enjoy luxurious resorts, stunning beaches, and vibrant nightlife.</p>
+            </a>
+            <a href="chiang_rai.html" class="destination" style="background-image: url('https://www.exoticca.com/_next/image?url=https%3A%2F%2Fuploads.exoticca.com%2Fglobal%2Fdestination%2Fpoi%2Fchiang-rai.png&w=3840&q=75');">
+                <h2>Chiang Rai</h2>
+                <p>Visit the famous White Temple and explore lush green hills.</p>
+            </a>
+            <a href="phang_nga_bay.html" class="destination" style="background-image: url('https://overatours.com/wp-content/uploads/2023/07/Phang-Nga-Bay-image-05-300x180.png');">
+                <h2>Phang Nga Bay</h2>
+                <p>Marvel at stunning limestone cliffs and emerald waters.</p>
+            </a>
+            <a href="doi_inthanon.html" class="destination" style="background-image: url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/ce/09/87/garden.jpg?w=1200&h=1200&s=1');">
+                <h2>Doi Inthanon</h2>
+                <p>Hike through the national park and see Thailand's highest peak.</p>
+            </a>
+            <a href="pattaya.html" class="destination" style="background-image: url('https://thailandawaits.com/wp-content/uploads/2022/12/Pattaya-Guide-City-Sign-1125x695.jpg');">
+                <h2>Pattaya</h2>
+                <p>Enjoy vibrant nightlife, beautiful beaches, and water sports.</p>
+            </a>
+            <a href="sukhothai.html" class="destination" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsaTe6SASm_b7DCWFfRtL2dx24O6Lv3zwdpw&s');">
+                <h2>Sukhothai</h2>
+                <p>Explore ancient ruins and the birthplace of Thai civilization.</p>
+            </a>
+            <a href="khao_sok_national_park.html" class="destination" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHItpmVA6AlMS34RSLQC49U-7btl6mWZMhhg&s');">
+                <h2>Khao Sok National Park</h2>
+                <p>Experience stunning rainforests and unique wildlife.</p>
+            </a>
+            <a href="railay_beach.html" class="destination" style="background-image: url('https://miro.medium.com/v2/resize:fit:7818/1*MGzmFx2_2dOQswtLngqCiA.jpeg');">
+                <h2>Railay Beach</h2>
+                <p>Discover rock climbing and beautiful beach scenery.</p>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <p>Contact us: Trasiaagency@gmail.com | +40727300463</p>
+        <p>&copy; 2024 Trasia Agency. All rights reserved.</p>
+    </footer>
+</body>
+</html>

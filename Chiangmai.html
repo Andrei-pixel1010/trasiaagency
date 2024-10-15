@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Chiang Mai</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #111222;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background: #934120;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: sticky; /* Makes the header sticky */
+            top: 0; /* Sticks to the top of the viewport */
+            z-index: 1000; /* Ensures the header is above other content */
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav {
+            margin-top: 10px; /* Space between title and nav */
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ffcc00; /* Hover effect */
+        }
+        .hero {
+            background: url(https://static.independent.co.uk/2024/02/09/16/newFile.jpg) no-repeat center center/cover;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        .hero h2 {
+            font-size: 3em;
+            z-index: 1;
+        }
+        .content {
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+        }
+        .content h3 {
+            color: #000000;
+            margin-bottom: 15px;
+        }
+        .content p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .gallery img {
+            width: calc(33% - 10px);
+            height: 200px; /* Set a fixed height */
+            object-fit: cover; /* Ensure images cover the area without distortion */
+            border-radius: 8px;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer; /* Change cursor to pointer */
+        }
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1001; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
+            justify-content: center; /* Center content */
+            align-items: center; /* Center content */
+            display: flex; /* Use flex to center the image */
+        }
+        .modal img {
+            max-width: 90%; /* Responsive */
+            max-height: 90%; /* Responsive */
+            border-radius: 8px;
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        footer {
+            background: #934120;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2.5em;
+            }
+            .gallery img {
+                width: calc(50% - 10px); /* Two images per row on smaller screens */
+                height: 150px; /* Adjust height for smaller screens */
+            }
+        }
+        @media (max-width: 480px) {
+            .gallery img {
+                width: 100%; /* Full width on mobile */
+                height: 100px; /* Adjust height for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Trasia Agency</div>
+        <nav>
+            <a href="Trasia1.html" class="cta-button">Home</a>
+            <a href="#">Destinations</a>
+            <a href="#">Services</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    
+    <div class="hero">
+        <h2>Explore the City</h2>
+    </div>
+    
+    <div class="content">
+        <h3>Despre Chiang Mai</h3>
+      <p>Chiang Mai este o destinație de vis pentru turiști, oferind o combinație perfectă de cultură, natură și aventură. Vizitatorii pot explora templele impresionante, cum ar fi Wat Phra That Doi Suthep, ce oferă vederi spectaculoase. Piețele de noapte sunt ideale pentru a gusta mâncăruri delicioase, cum ar fi Khao Soi și fructele exotice.
+Pentru cei în căutarea aventurii, activități precum drumețiile în munți, plimbările cu elefanți sau zborurile cu parapanta sunt populare. De asemenea, turiștii pot participa la cursuri de gătit thailandez sau la ateliere de artizanat. Festivalurile locale, cum ar fi Yi Peng, unde lampioanele sunt lansate în cer, oferă o experiență de neuitat.
+Chiang Mai are o atmosferă relaxantă, cu cafenele pitorești și spa-uri care oferă masaje tradiționale. Cu un mix de tradiție și modernitate, orașul atrage vizitatori de toate vârstele, făcându-l o destinație perfectă pentru o escapadă unică.</p>
+        
+        <h3>Atractii de neratat</h3>
+        <p>Chiang Mai oferă atracții de neratat, precum Wat Phra That Doi Suthep, un templu iconic ce oferă vederi superbe. Alte locuri de vizitat includ Piața de Noapte, unde poți savura mâncăruri locale, și Grădina Zoologică Chiang Mai, cunoscută pentru panda. De asemenea, explorează satele artisanale din jur pentru meșteșuguri tradiționale.</p>
+        
+        <h3>Experimenteaza cultura locala</h3>
+        <p>Experiența culturii locale în Chiang Mai este captivantă. Vizitatorii pot participa la cursuri de gătit thailandez, învățând să prepare mâncăruri autentice. Festivalurile, cum ar fi Yi Peng, oferă ocazia de a lansa lampioane și de a participa la ritualuri tradiționale. De asemenea, vizitarea piețelor de artizanat și interacțiunea cu localnicii îmbogățesc această experiență culturală.</p>
+        
+        <h3>Gallery</h3>
+        <div class="gallery">
+            <img src=https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/0020-%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%AA%E0%B8%B4%E0%B8%87%E0%B8%AB%E0%B9%8C%E0%B8%A7%E0%B8%A3%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%A7%E0%B8%B4%E0%B8%AB%E0%B8%B2%E0%B8%A3.jpg/1200px-0020-%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%AA%E0%B8%B4%E0%B8%87%E0%B8%AB%E0%B9%8C%E0%B8%A7%E0%B8%A3%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%A7%E0%B8%B4%E0%B8%AB%E0%B8%B2%E0%B8%A3.jpg alt="Attraction 1" onclick="openModal(this.src)">
+            <img src=https://www.takemetour.com/amazing-thailand-go-local/wp-content/uploads/2018/04/ChiangMai_TakeMeTour_3-e1525774746926.jpg alt="Attraction 2" onclick="openModal(this.src)">
+            <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcMEOr4-BJqx0W7FCnxvHiSfp6OlVw6NXSfQ&s alt="Attraction 3" onclick="openModal(this.src)">
+            <img src=https://content.r9cdn.net/rimg/dimg/d7/a3/11b8ae51-city-6042-1638dab0fe6.jpg?width=1200&height=630&xhint=1542&yhint=1041&crop=true alt="Attraction 4" onclick="openModal(this.src)">
+            <img src=https://i0.wp.com/lindagoeseast.com/wp-content/uploads/chiang-mai-itinerary-scaled.jpg?fit=2560%2C2095&ssl=1alt="Attraction 5" onclick="openModal(this.src)">
+            <img src=https://www.agoda.com/wp-content/uploads/2020/06/Things-to-do-featured-photo-Chiang-Mai-Thailand.jpg alt="Attraction 6" onclick="openModal(this.src)">
+        </div>
+    </div>
+
+    <div id="myModal" class="modal" onclick="closeModal()">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modalImage" src="" alt="Modal Image">
+    </div>
+
+    <footer>
+        <p>Contact us: Trasiaagency@gmail.com | 0727300463</p>
+        <p>&copy; 2024 Trasia Agency. All rights reserved.</p>
+    </footer>
+<script>
+    function openModal(src) {
+        document.getElementById("modalImage").src = src;
+        document.getElementById("myModal").style.display = "flex"; // Use flex to center the image
+    }
+
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+    }
+
+    // Ensure the modal is closed on page load
+    window.onload = function() {
+        closeModal();
+    };
+</script>
+
+</body>
+</html>

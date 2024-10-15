@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Agency</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background: #926f34;
+            color: white;
+            padding: 20px 40px; /* Increased padding for a larger header */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for header */
+        }
+        header .logo {
+            font-size: 1.8em; /* Larger logo text */
+            font-weight: bold; /* Bold logo */
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px; /* Increased margin for better spacing */
+            font-weight: 500; /* Slightly bolder font */
+        }
+        nav a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+        .hero {
+            background: url(https://www.adventurouskate.com/wp-content/uploads/2019/12/Koh-Phi-Phi.jpg) no-repeat center center/cover; /* Cover the entire background */
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative; /* Positioning context for text */
+        }
+        .hero h1 {
+            font-size: 3em; /* Larger title text */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow for better readability */
+        }
+        .cta-button {
+            background: #926f34;
+            color: white;
+            padding: 15px 30px; /* Larger button */
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em; /* Larger button text */
+            transition: background 0.3s; /* Smooth transition */
+        }
+        .cta-button:hover {
+            background: #926f34; /* Darker shade on hover */
+        }
+        .section {
+            padding: 40px 20px; /* More padding for sections */
+            text-align: center;
+        }
+        .destinations, .testimonials {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            flex-wrap: wrap; /* Wrap on smaller screens */
+        }
+        .destination {
+            background-color: #f9f9f9; /* Light background color */
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px; /* Increased padding */
+            width: 30%;
+            margin: 10px 0; /* Margin for spacing */
+            transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+        .destination:hover {
+            transform: translateY(-5px); /* Slight lift on hover */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+        }
+        .testimonial {
+            background-color: #f0f0f0; /* Light background color for testimonials */
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px; /* Increased padding */
+            width: 30%;
+            margin: 10px 0; /* Margin for spacing */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+        }
+        .testimonial:hover {
+            transform: translateY(-5px); /* Slight lift on hover */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+        }
+        footer {
+            background: #926f34;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Trasia Agency</div>
+        <nav>
+            <a href="Trasia1.html" class="cta-button">Home</a>
+            <a href="destinations.html" class="cta-button">Destinations</a>
+            <a href="#">Services</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    
+    <div class="hero">
+        <h1>Explore Thailand with us!</h1>
+        <a href="Booking.html" class="cta-button">Book Now</a>
+    </div>
+    <div class="section">
+        <h2>Featured Destinations</h2>
+        <div class="destinations" style="display: flex; justify-content: center; flex-wrap: nowrap;">
+            <div class="destination" style="background-image: url('https://www.travelseewrite.com/wp-content/uploads/2022/09/Rattanakosin-is-the-royal-area-of-Bangkok.jpeg'); background-size: cover; background-position: center; color: white; padding: 15px; border-radius: 5px; margin: 10px; text-align: center; flex: 1; min-width: 250px; min-height: 200px;">       
+                <h3>Bangkok</h3>
+                <p>Experience the ancient town with us</p>
+                <a href="Bangkok.html" class="cta-button">Learn More</a>
+            </div>
+            <div class="destination" style="background-image: url('https://d3h1lg3ksw6i6b.cloudfront.net/media/image/2023/09/13/4969e4b8a93c41f6b1f2d161eaade88f_Chiang_Mai_Where_To_Eat_Drink_Stay_And_Play_In_The_Cultural_Capital_Of_Northern_Thaila.jpg'); background-size: cover; background-position: center; color: white; padding: 15px; border-radius: 5px; margin: 10px; text-align: center; flex: 1; min-width: 250px;">
+                <h3>Chiang Mai</h3>
+                <p>Explore the nature in the north of Thailand</p>
+                <a href="Chiangmai.html" class="cta-button">Learn More</a>
+            </div>
+            <div class="destination" style="background-image: url('https://www.travelandleisure.com/thmb/RQ3JmT8V2y2fhwr7NY0cgUumcCE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/phuket-thailand-karst-formation-phuket0327-92bd3ce9266148dba74cba5e36c711e2.jpg'); background-size: cover; background-position: center; color: white; padding: 15px; border-radius: 5px; margin: 10px; text-align: center; flex: 1; min-width: 250px;">
+                <h3>Phuket</h3>
+                <p>Enjoy the nature and the beautiful beaches in the south of Thailand</p>
+                <a href="Phuket.html" class="cta-button">Learn More</a>
+            </div>
+        </div>
+    </div>
+    <style>
+        .section {
+            padding: 20px;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+    
+        .testimonials {
+            margin: 20px 0;
+        }
+    
+        .testimonial {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px;
+            max-width: 400px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: left; /* Align text to the left */
+        }
+    
+        .testimonial img {
+            width: 40px; /* Adjust size as needed */
+            height: 40px; /* Adjust size as needed */
+            border-radius: 50%;
+            margin-right: 10px; /* Space between image and text */
+            vertical-align: middle; /* Align image with text */
+        }
+    
+        .testimonial p {
+            margin: 5px 0;
+        }
+    </style>
+    
+    <div class="section">
+        <h2>Customer Testimonials</h2>
+        <div class="testimonials">
+            <div class="testimonial">
+                <p>
+                    <img src="https://www.andreearaicu.ro/wp-content/uploads/2023/03/beautiful-model-sitting-armchair-waving-hair-scaled-e1678441697982.jpg" alt="Francisca Filip"> 
+                    "Best travel agency! Made my vacation unforgettable!" 
+                    <br>- Francisca Filip.
+                </p>
+            </div>
+            <div class="testimonial">
+                <p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTChOP808ehyNwa7KIcciHVS8Ujt-OILRG4w&s" alt="Tofan Alexandra"> 
+                    "Great service and fantastic deals!" 
+                    <br>- Tofan Alexandra
+                </p>
+            </div>
+            <div class="testimonial">
+                <p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxc_NV8Pa1g1cOLzX378UcB5sGqO3gUaOOzQ&s" alt="Denisa Anghel"> 
+                    "I loved every moment of my trip!" 
+                    <br>- Denisa Anghel.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    
+    <footer>
+        <p>Contact us: Trasiaagency@gmail.com | +40727300463</p>
+        <p>&copy; 2024 Trasia Agency. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+

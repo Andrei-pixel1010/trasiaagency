@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Phi Phi Islands</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background: #926f34;
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        header .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 500;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOILkG9TxBgdQCXIYhmAqW_fdbC4i2R8ODRA&s) no-repeat center center/cover;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        .hero h2 {
+            font-size: 3em;
+            z-index: 1;
+        }
+        .content {
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .content h3 {
+            color: #926f34;
+            margin-bottom: 15px;
+        }
+        .content p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .gallery img {
+            width: calc(33% - 10px);
+            border-radius: 8px;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer; /* Change cursor to pointer */
+        }
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1001; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
+            justify-content: center; /* Center content */
+            align-items: center; /* Center content */
+            display: flex; /* Use flex to center the image */
+        }
+        .modal img {
+            max-width: 90%; /* Responsive */
+            max-height: 90%; /* Responsive */
+            border-radius: 8px;
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        footer {
+            background: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2.5em;
+            }
+            .gallery img {
+                width: calc(50% - 10px);
+            }
+        }
+        @media (max-width: 480px) {
+            .gallery img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Trasia Agency</div>
+        <nav>
+            <a href="Trasia1.html">Home</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="#">Services</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    
+    <div class="hero">
+        <h2>Phi Phi Islands</h2>
+    </div>
+    
+    <div class="content">
+        <h3>About the City</h3>
+        <p>Bangkok, Thailand's vibrant capital, offers a captivating blend of tradition and modernity. Visitors can explore stunning temples like Wat Pho and Wat Arun, each showcasing intricate architecture and rich history. The bustling markets, such as Chatuchak Weekend Market, provide a feast for the senses with local crafts, delicious street food, and lively atmosphere. Don’t miss a boat ride along the Chao Phraya River for a unique view of the city. Enjoy the vibrant nightlife in areas like Khao San Road and indulge in traditional Thai cuisine at local eateries. With its warm culture and endless attractions, Bangkok is a must-visit destination.</p>
+        
+        <h3>Must-See Attractions</h3>
+        <p>From iconic landmarks to hidden gems, explore the best that the city has to offer. Don’t miss the famous museum, historic district, and lively marketplaces!</p>
+        
+        <h3>Experience the Local Culture</h3>
+        <p>Immerse yourself in the local culture by trying traditional dishes, attending festivals, and exploring the art scene. The city comes alive with unique experiences waiting to be discovered.</p>
+        
+        <h3>Gallery</h3>
+        <div class="gallery">
+            <img src="https://www.brusselsairlines.com/aircore/cache/images/67686/eyJpZGVudGlmaWVyIjoxMTc3NywidHlwZSI6ImFzc2V0In0=_1.webp" alt="Attraction 1" onclick="openModal(this.src)">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTvZP3TVnR-SJrWzWqCrTU7pPCct8evN6O8IH2HLyI8MRsENmAzfkV1q7pKaGzQVuCduw&usqp=CAU" alt="Attraction 2" onclick="openModal(this.src)">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT-mvki1Dpe0M5wmzeYOwM6CPZl4G-006DZfxMdIZDuySamDusZ6kqLoSpBII-_D1VXA4&usqp=CAU" alt="Attraction 3" onclick="openModal(this.src)">
+            <img src="https://www.traveloffpath.com/wp-content/uploads/2022/06/Amazing-view-of-the-city-of-Bangkok-Thailand.jpg" alt="Attraction 4" onclick="openModal(this.src)">
+            <img src="https://media.nomadicmatt.com/2023/bangkokskyline.jpg" alt="Attraction 5" onclick="openModal(this.src)">
+            <img src="https://www.holidify.com/images/bgImages/BANGKOK%20.jpg" alt="Attraction 6" onclick="openModal(this.src)">
+        </div>
+    </div>
+
+    <div id="myModal" class="modal" onclick="closeModal()">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modalImage" src="" alt="Modal Image">
+    </div>
+
+    <footer>
+        <p>Contact us: Trasiaagency@gmail.com | +40727300463</p>
+        <p>&copy; 2024 Trasia Agency. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function openModal(src) {
+            document.getElementById("modalImage").src = src;
+            document.getElementById("myModal").style.display = "flex"; // Use flex to center the image
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        // Ensure the modal is closed on page load
+        window.onload = function() {
+            closeModal();
+        };
+    </script>
+
+</body>
+</html>
