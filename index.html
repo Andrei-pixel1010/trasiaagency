@@ -77,7 +77,7 @@
         }
         .destinations {
             display: flex;
-            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            flex-wrap: wrap;
             justify-content: center;
             margin-top: 20px;
         }
@@ -86,8 +86,8 @@
             border: 1px solid #ddd;
             border-radius: 10px;
             padding: 20px;
-            width: calc(33% - 40px); /* Responsive width */
-            margin: 10px; /* Margin for spacing */
+            width: calc(33% - 40px);
+            margin: 10px;
             transition: transform 0.3s, box-shadow 0.3s;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
@@ -97,7 +97,7 @@
         }
         @media (max-width: 768px) {
             .destination {
-                width: calc(100% - 40px); /* Stack on mobile */
+                width: calc(100% - 40px);
             }
         }
         .testimonial {
@@ -105,8 +105,8 @@
             border: 1px solid #ddd;
             border-radius: 10px;
             padding: 20px;
-            width: 30%;
-            margin: 10px 0;
+            width: calc(30% - 40px);
+            margin: 10px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
         }
@@ -120,7 +120,6 @@
             padding: 10px 20px;
             text-align: center;
         }
-        /* Mobile styles */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -138,6 +137,9 @@
             .menu-toggle {
                 display: block;
             }
+            .testimonial {
+                width: calc(100% - 40px); /* Full width on mobile */
+            }
         }
     </style>
 </head>
@@ -146,7 +148,7 @@
         <div class="logo">Trasia Agency</div>
         <nav>
             <div class="nav-links">
-                <a href="Trasia1.html" class="cta-button">Home</a>
+                <a href="index.html" class="cta-button">Home</a>
                 <a href="destinations.html" class="cta-button">Destinations</a>
                 <a href="#">Services</a>
                 <a href="#">About Us</a>
@@ -187,21 +189,21 @@
         <div class="testimonials" style="display: flex; justify-content: center; flex-wrap: wrap;">
             <div class="testimonial">
                 <p>
-                    <img src="https://www.andreearaicu.ro/wp-content/uploads/2023/03/beautiful-model-sitting-armchair-waving-hair-scaled-e1678441697982.jpg" alt="Francisca Filip"> 
+                    <img src="https://www.andreearaicu.ro/wp-content/uploads/2023/03/beautiful-model-sitting-armchair-waving-hair-scaled-e1678441697982.jpg" alt="Francisca Filip" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px; vertical-align: middle;"> 
                     "Best travel agency! Made my vacation unforgettable!" 
                     <br>- Francisca Filip.
                 </p>
             </div>
             <div class="testimonial">
                 <p>
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTChOP808ehyNwa7KIcciHVS8Ujt-OILRG4w&s" alt="Tofan Alexandra"> 
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTChOP808ehyNwa7KIcciHVS8Ujt-OILRG4w&s" alt="Tofan Alexandra" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px; vertical-align: middle;"> 
                     "Great service and fantastic deals!" 
                     <br>- Tofan Alexandra
                 </p>
             </div>
             <div class="testimonial">
                 <p>
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxc_NV8Pa1g1cOLzX378UcB5sGqO3gUaOOzQ&s" alt="Denisa Anghel"> 
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxc_NV8Pa1g1cOLzX378UcB5sGqO3gUaOOzQ&s" alt="Denisa Anghel" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px; vertical-align: middle;"> 
                     "I loved every moment of my trip!" 
                     <br>- Denisa Anghel.
                 </p>
@@ -224,3 +226,4 @@
     </script>
 </body>
 </html>
+
