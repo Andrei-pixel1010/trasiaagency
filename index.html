@@ -11,36 +11,48 @@
             margin: 0;
             padding: 0;
             color: #333;
-            background-color: #f9f9f9; /* Light background for contrast */
+            background-color: #f9f9f9;
         }
         header {
-            background: linear-gradient(to bottom, #926f34, #fff1d8); /* Gold color for the header */
+            background: linear-gradient(to bottom, #926f34, #fff1d8);
             color: white;
-            padding: 20px 40px;
+            padding: 20px 10px;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
         header .logo {
             font-size: 1.8em;
             font-weight: bold;
         }
+        .menu-toggle {
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer;
+            margin-top: 10px;
+        }
         nav {
-            display: flex;
+            display: none; /* Hide the nav by default */
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10px;
         }
         nav a {
             color: white;
             text-decoration: none;
-            margin: 0 15px;
+            margin: 10px 0; /* Vertical margin */
             font-weight: 500;
+            font-size: 1.2em;
         }
         nav a:hover {
-            text-decoration: none; /* No underline on hover */
+            text-decoration: underline;
         }
         .hero {
             background: url(https://www.adventurouskate.com/wp-content/uploads/2019/12/Koh-Phi-Phi.jpg) no-repeat center center/cover;
-            height: 400px;
+            height: 250px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -49,20 +61,20 @@
             position: relative;
         }
         .hero h1 {
-            font-size: 3em;
+            font-size: 2em;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
         .cta-button {
             background: #b19462;
             color: white;
-            padding: 15px 30px;
+            padding: 10px 20px;
             text-decoration: none;
             border-radius: 5px;
-            font-size: 1.2em;
+            font-size: 1em;
             transition: background 0.3s;
         }
         .cta-button:hover {
-            background: #b88859; /* Darker shade on hover */
+            background: #b88859;
         }
         .section {
             padding: 20px;
@@ -70,26 +82,24 @@
         }
         .destinations {
             display: flex;
-            flex-wrap: wrap; /* Wrap on smaller screens */
-            justify-content: center; /* Center items */
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
         }
         .destination {
-            background-color: #f9f9f9; /* Light background color */
+            background-color: #f9f9f9;
             border: 1px solid #ddd;
             border-radius: 10px;
-            padding: 15px; /* Increased padding */
-            margin: 10px; /* Margin for spacing */
-            transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-            width: calc(33% - 20px); /* Three cards per row */
-            max-width: 300px; /* Max width for cards */
+            padding: 15px;
+            margin: 10px 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 300px;
         }
         .destination:hover {
-            transform: translateY(-5px); /* Slight lift on hover */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
-        }
-        .destination h3 {
-            margin: 10px 0;
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
         .testimonial {
             background-color: white;
@@ -97,39 +107,32 @@
             border-radius: 5px;
             padding: 15px;
             margin: 10px;
-            max-width: 400px;
+            max-width: 90%;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            text-align: left; /* Align text to the left */
+            text-align: left;
         }
         .testimonial img {
-            width: 40px; /* Adjust size as needed */
-            height: 40px; /* Adjust size as needed */
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
-            margin-right: 10px; /* Space between image and text */
-            vertical-align: middle; /* Align image with text */
+            margin-right: 10px;
+            vertical-align: middle;
         }
         footer {
-            background: linear-gradient(to bottom, #fff1d8, #926f34); ;
+            background: linear-gradient(to bottom, #fff1d8, #926f34);
             color: white;
             padding: 10px 20px;
             text-align: center;
         }
         /* Responsive styles */
         @media (max-width: 768px) {
-            .destination {
-                width: calc(50% - 20px); /* Two cards per row */
-            }
             .hero h1 {
-                font-size: 2.5em; /* Smaller title text on smaller screens */
+                font-size: 1.8em;
             }
         }
         @media (max-width: 480px) {
-            .destination {
-                width: 100%; /* One card per row */
-                margin: 5px 0; /* Adjust margin for mobile */
-            }
             .hero h1 {
-                font-size: 2em; /* Smaller title text on extra small screens */
+                font-size: 1.5em;
             }
         }
     </style>
@@ -137,7 +140,8 @@
 <body>
     <header>
         <div class="logo">Trasia Agency</div>
-        <nav>
+        <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+        <nav id="navMenu">
             <a href="Trasia1.html" class="cta-button">Home</a>
             <a href="destinations.html" class="cta-button">Destinations</a>
             <a href="#">Services</a>
@@ -171,7 +175,7 @@
             </div>
             <div class="destination" style="background-image: url('https://www.pacificprime.com/blog/wp-content/uploads/Tiny-Thai-flag-on-the-map-next-to-Thailand-1138x493.jpg'); background-size: cover; background-position: center; color: white;">
                 <h3>Explore other cities</h3>
-                <p>See what other cities can Thailand offer</p>
+                <p>See what other cities Thailand has to offer</p>
                 <a href="destinations.html" class="cta-button">Learn More</a>
             </div>
         </div>
@@ -196,17 +200,23 @@
             </div>
             <div class="testimonial">
                 <p>
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxc_NV8Pa1g1cOLzX378UcB5sGqO3gUaOOzQ&s" alt="Denisa Anghel"> 
-                    "I loved every moment of my trip!" 
-                    <br>- Denisa Anghel.
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxc_NV8Pa1g1cOLzX378UcB5sGqO3gUaOOzQ&s" alt="Denis"> 
+                    "Unforgettable experiences!" 
+                    <br>- Denis
                 </p>
             </div>
         </div>
     </div>
-    
+
     <footer>
-        <p>Contact us: Trasiaagency@gmail.com | +40727300463</p>
-        <p>&copy; 2024 Trasia Agency. All rights reserved.</p>
+        <p>© 2023 Trasia Agency. All rights reserved.</p>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
 </body>
 </html>
