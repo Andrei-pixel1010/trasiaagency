@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel Agency</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -16,9 +15,9 @@
         header {
             background: linear-gradient(to bottom, #86e8fc, #9eeece, #c8fbe6);
             color: white;
-            padding: 10px 10px; /* Smaller header padding */
+            padding: 5px; /* Smaller header padding */
             display: flex;
-            flex-direction: column;
+            justify-content: space-between; /* Aligns logo and button */
             align-items: center;
         }
         header .logo {
@@ -29,9 +28,9 @@
             background: transparent;
             border: none;
             color: white;
-            font-size: 2.5em; /* Smaller menu button */
+            font-size: 2em; /* Smaller menu button */
             cursor: pointer;
-            margin: 5px 0; /* Reduced margin */
+            margin: 5px; /* Reduced margin */
         }
         .menu-overlay {
             display: none;
@@ -50,14 +49,18 @@
             text-align: center;
         }
         .menu-overlay nav a {
+            display: block; /* Stack menu items */
             font-size: 2em; /* Menu item font size */
-            margin: 20px 0; /* Space between menu items */
+            margin: 10px 0; /* Space between menu items */
+            padding: 10px;
+            background: #cef9e7;
+            border-radius: 10px;
             color: #333;
             text-decoration: none;
-            transition: color 0.3s;
+            transition: background 0.3s;
         }
         .menu-overlay nav a:hover {
-            color: #86e8fc;
+            background: #86e8fc;
         }
         .close-button {
             position: absolute;
@@ -77,6 +80,8 @@
             color: white;
             text-align: center;
             position: relative;
+            border-radius: 15px; /* Smooth corners for hero image */
+            overflow: hidden;
         }
         .hero h1 {
             font-size: 2em;
@@ -114,6 +119,10 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             width: 90%;
             max-width: 300px;
+            font-family: 'Arial', sans-serif; /* Match font */
+        }
+        .destination h3 {
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
         }
         .destination:hover {
             transform: translateY(-5px);
