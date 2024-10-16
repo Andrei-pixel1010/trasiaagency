@@ -7,20 +7,27 @@ body {
     color: #333;
     line-height: 1.6;
 }
-
 header {
-    background: linear-gradient(to bottom, #926f34, #ffffff);
+    background: linear-gradient(to bottom, #86e8fc, #9eeece, #c8fbe6);
     color: white;
-    padding: 20px;
-    text-align: center;
-    position: sticky; /* Makes the header sticky */
-    top: 0; /* Sticks to the top of the viewport */
-    z-index: 1000; /* Ensures the header is above other content */
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
 }
-
 header .logo {
     font-size: 1.8em;
     font-weight: bold;
+}
+.menu-toggle {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 3.0em;
+    cursor: pointer;
+    margin: 10px 0; /* Center the button with vertical margin */
+    align-self: flex-start; /* Align to the left */
 }
 
 nav {
@@ -35,10 +42,62 @@ nav a {
 }
 
 nav a:hover {
-    color: #ffcc00; /* Hover effect */
+    color: #ffcc00; /* Hover effect */
+}
+/* Media Queries for Hamburger Menu */
+@media (max-width: 768px) {
+    nav {
+        display: none; /* Hide nav by default */
+        flex-direction: column; /* Stack items vertically */
+        position: absolute;
+        background-color: #333;
+        top: 50px; /* Adjust based on header height */
+        right: 0;
+        width: 200px; /* Set width for the menu */
+    }
+
+    .menu-toggle {
+        display: block; /* Show the button on smaller screens */
+    }
+
+    nav.visible {
+        display: flex; /* Show nav when toggled */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack links vertically */
+        width: 100%; /* Full width */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Vertical spacing */
+    }
 }
 
-.hero {
+.hidden {
+    display: none; /* Class to hide menu */
+}
+.hero.Bangkok {
+    background: url(https://assets.anantara.com/image/upload/q_auto,f_auto/media/minor/anantara/images/brandpage/destinations/asia/thailand-bangkok.jpg) no-repeat center center/cover;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+.hero.Chiangmai {
+    background: url(https://static.independent.co.uk/2024/02/09/16/newFile.jpg) no-repeat center center/cover;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+.hero.Doiinthanon {
     background: url(https://static.independent.co.uk/2024/02/09/16/newFile.jpg) no-repeat center center/cover;
     height: 50vh;
     display: flex;
@@ -131,7 +190,7 @@ nav a:hover {
 }
 
 footer {
-    background: linear-gradient(to bottom, #ffffff, #926f34);
+    background: linear-gradient(to bottom, #cef9e7, #9eeece,#86e8fc );
     color: white;
     padding: 20px;
     text-align: center;
