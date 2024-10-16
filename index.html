@@ -117,13 +117,13 @@
             margin: 10px auto;
             border-radius: 5px;
         }
-        .destinations, .activities {
+        .destinations {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
             gap: 30px;
         }
-        .destination, .activity {
+        .destination {
             background-color: #fff;
             border-radius: 15px;
             padding: 20px;
@@ -134,73 +134,75 @@
             overflow: hidden;
             text-align: center;
         }
-        .destination img, .activity img {
+        .destination img {
             border-radius: 15px;
             width: 100%;
-            height: 200px;
+            max-height: 200px; /* Limit the maximum height */
             object-fit: cover;
             transition: transform 0.5s;
         }
-        .destination:hover img, .activity:hover img {
+        .destination:hover img {
             transform: scale(1.1);
         }
-        .destination h3, .activity h3 {
+        .destination h3 {
             margin: 10px 0;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
             font-size: 1.5em;
             color: #333;
         }
-        .destination p, .activity p {
+        .destination p {
             color: #666;
         }
-        .destination:hover, .activity:hover {
+        .destination:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
         }
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 15px;
-            margin-top: 40px;
-        }
-        .gallery img {
-            width: 100%;
-            border-radius: 15px;
-            transition: transform 0.5s;
-        }
-        .gallery img:hover {
-            transform: scale(1.05);
-        }
-        .testimonial-container {
-            max-width: 600px;
-            margin: 40px auto;
+        .activity-container {
             position: relative;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            animation: slideIn 0.5s ease-in-out;
+            max-width: 400px;
+            margin: auto;
         }
-        @keyframes slideIn {
-            from { transform: translateY(50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-        .testimonial {
+        .activity {
             display: none;
             text-align: center;
         }
-        .testimonial.active {
+        .activity.active {
             display: block;
         }
+        .activity img {
+            border-radius: 15px;
+            width: 100%;
+            max-height: 200px; /* Limit the maximum height */
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .activity:hover img {
+            transform: scale(1.1);
+        }
+        .gallery {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+        }
+        .gallery img {
+            min-width: 100%;
+            max-height: 300px; /* Limit the maximum height */
+            object-fit: cover; /* Maintain aspect ratio */
+            transition: transform 0.5s;
+        }
+        .gallery-wrapper {
+            display: flex;
+            transition: transform 0.5s;
+        }
         .prev, .next {
-            background: transparent;
-            border: none;
-            font-size: 2em;
-            cursor: pointer;
-            color: #333;
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
         }
         .prev {
             left: 10px;
@@ -276,8 +278,12 @@
             .cta-button {
                 font-size: 1.2em;
             }
-            .destination, .activity {
-                width: 90%;
+            .section h2 {
+                font-size: 2em;
+            }
+            .destination {
+                width: 100%;
+                max-width: 300px;
             }
         }
     </style>
@@ -288,6 +294,7 @@
         <nav class="nav-links" id="navLinks">
             <a href="#destinations" class="nav-link">Destinations</a>
             <a href="#activities" class="nav-link">Activities</a>
+            <a href="#gallery" class="nav-link">Gallery</a>
             <a href="#testimonials" class="nav-link">Testimonials</a>
             <a href="#contact" class="nav-link">Contact</a>
         </nav>
@@ -295,114 +302,101 @@
     </header>
 
     <div class="hero">
-        <h1>Explore Thailand with Us</h1>
-        <a href="Booking.html" class="cta-button">Book Now</a>
+        <h1>Discover the Wonders of Thailand</h1>
+        <a href="#destinations" class="cta-button">Explore Now</a>
     </div>
 
     <div class="section" id="destinations">
-        <h2>Featured Destinations</h2>
+        <h2>Beautiful Destinations</h2>
         <div class="destinations">
             <div class="destination">
-                <img src="https://www.travelseewrite.com/wp-content/uploads/2022/09/Rattanakosin-is-the-royal-area-of-Bangkok.jpeg" alt="Bangkok">
-                <h3>Bangkok</h3>
-                <p>Experience the ancient town with us</p>
-                <a href="Bangkok.html" class="cta-button">Learn More</a>
-            </div>
-            <div class="destination">
-                <img src="https://d3h1lg3ksw6i6b.cloudfront.net/media/image/2023/09/13/4969e4b8a93c41f6b1f2d161eaade88f_Chiang_Mai_Where_To_Eat_Drink_Stay_And_Play_In_The_Cultural_Capital_Of_Northern_Thaila.jpg" alt="Chiang Mai">
-                <h3>Chiang Mai</h3>
-                <p>Explore the nature in the north of Thailand</p>
-                <a href="Chiangmai.html" class="cta-button">Learn More</a>
-            </div>
-            <div class="destination">
-                <img src="https://www.travelandleisure.com/thmb/RQ3JmT8V2y2fhwr7NY0cgUumcCE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/phuket-thailand-karst-formation-phuket0327-92bd3ce9266148dba74cba5e36c711e2.jpg" alt="Phuket">
+                <img src="https://media.istockphoto.com/id/1283402351/photo/tropical-beach-on-sunset-time.jpg?s=612x612&w=0&k=20&c=YV9OZw2FgB1F4U2x50TykwnF4uN4B6MkrgBBKnD8M2g=" alt="Beach">
                 <h3>Phuket</h3>
-                <p>Relax on the beautiful beaches</p>
-                <a href="Phuket.html" class="cta-button">Learn More</a>
+                <p>Experience the stunning beaches and vibrant nightlife.</p>
+            </div>
+            <div class="destination">
+                <img src="https://media.istockphoto.com/id/1174272999/photo/temple-of-the-emerald-buddha-bangkok.jpg?s=612x612&w=0&k=20&c=3L_4_J52p41zxyk2T3G1Tz1uG3t2psHohK4kOn6bndU=" alt="Temple">
+                <h3>Bangkok</h3>
+                <p>Explore the rich culture and historic temples.</p>
+            </div>
+            <div class="destination">
+                <img src="https://media.istockphoto.com/id/1041441390/photo/krabi-beach-thailand.jpg?s=612x612&w=0&k=20&c=EDp1GAp5Cr2KGr12Sr3tT_PfKPHzK5OItz4Q0uBkjAk=" alt="Krabi">
+                <h3>Krabi</h3>
+                <p>Discover the limestone cliffs and beautiful islands.</p>
             </div>
         </div>
     </div>
 
     <div class="section" id="activities">
         <h2>Popular Activities</h2>
-        <div class="activities">
-            <div class="activity">
+        <div class="activity-container">
+            <div class="activity active">
                 <img src="https://thethaiger.com/wp-content/uploads/2021/08/dragon-crest-mountain-krabi-thailand-1.webp" alt="Hiking">
                 <h3>Hiking in Doi Inthanon</h3>
                 <p>Explore Thailand's highest peak and its stunning nature trails.</p>
-                <a href="Hiking.html" class="cta-button">Discover More</a>
             </div>
             <div class="activity">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTetmepkgbLvkA8e8zMArVQc65ywqIwZzjS3Q&s" alt="Cooking Class">
                 <h3>Thai Cooking Class</h3>
                 <p>Learn to cook authentic Thai dishes with local chefs.</p>
-                <a href="CookingClass.html" class="cta-button">Discover More</a>
             </div>
             <div class="activity">
                 <img src="https://phuketdivecenter.com/wp-content/uploads/2019/12/PP-G1.jpg" alt="Diving">
                 <h3>Scuba Diving in Phuket</h3>
                 <p>Dive into the crystal-clear waters and explore vibrant marine life.</p>
-                <a href="Diving.html" class="cta-button">Discover More</a>
             </div>
+            <button class="prev" onclick="changeActivity(-1)">&#10094;</button>
+            <button class="next" onclick="changeActivity(1)">&#10095;</button>
         </div>
     </div>
 
     <div class="section">
         <h2>Gallery</h2>
         <div class="gallery">
-            <img src="https://media.istockphoto.com/id/1011241694/photo/thai-traditional-wooden-longtail-boat-and-beautiful-sand-beach.jpg?s=612x612&w=0&k=20&c=3Al0xNJgX7LXSiNFbbZFLG2DcHIEtO_XDdgvvRBImUk=" alt="Thai Landscape">
-            <img src="https://media.istockphoto.com/id/1412045138/photo/phuket-walking-street-night-market-in-phuket.jpg?s=612x612&w=0&k=20&c=VqW9i3xg8ghLE7INFyXchfUKBFG1YVHnoA9tjulJfpk=" alt="Street Market">
-            <img src="https://thumbor.thebear.group/unsafe/630x0/https://directus-deskthebear.s3.ap-southeast-1.amazonaws.com/uploads/9cd07d03-097e-4bc3-acaf-969f956d874a.jpeg" alt="Temple">
-            <img src="https://www.expique.com/wp-content/uploads/2021/02/Thai-food-2.jpg" alt="Thai Food">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnKebZlkNqWUgNzRUTzWaiW4qeGKOV_ZGhuw&s" alt="Beach Sunset">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUR7s0OHKb2g36d__9BJLltep_F6615Uc5EA&s" alt="Cultural Dance">
-        </div>
-    </div>
-
-    <div class="section" id="testimonials">
-        <h2>Customer Testimonials</h2>
-        <div class="testimonial-container">
-            <div class="testimonial active">
-                <p>"Trasia Agency made our trip unforgettable! Highly recommended!"</p>
-                <p>- John Doe</p>
+            <div class="gallery-wrapper" id="galleryWrapper">
+                <img src="https://media.istockphoto.com/id/1011241694/photo/thai-traditional-wooden-longtail-boat-and-beautiful-sand-beach.jpg?s=612x612&w=0&k=20&c=3Al0xNJgX7LXSiNFbbZFLG2DcHIEtO_XDdgvvRBImUk=" alt="Thai Landscape">
+                <img src="https://media.istockphoto.com/id/1412045138/photo/phuket-walking-street-night-market-in-phuket.jpg?s=612x612&w=0&k=20&c=VqW9i3xg8ghLE7INFyXchfUKBFG1YVHnoA9tjulJfpk=" alt="Street Market">
+                <img src="https://thumbor.thebear.group/unsafe/630x0/https://directus-deskthebear.s3.ap-southeast-1.amazonaws.com/uploads/9cd07d03-097e-4bc3-acaf-969f956d874a.jpeg" alt="Temple">
+                <img src="https://www.expique.com/wp-content/uploads/2021/02/Thai-food-2.jpg" alt="Thai Food">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnKebZlkNqWUgNzRUTzWaiW4qeGKOV_ZGhuw&s" alt="Beach Sunset">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUR7s0OHKb2g36d__9BJLltep_F6615Uc5EA&s" alt="Cultural Dance">
             </div>
-            <div class="testimonial">
-                <p>"The best travel experience I've ever had. Thank you, Trasia!"</p>
-                <p>- Jane Smith</p>
-            </div>
-            <div class="testimonial">
-                <p>"A seamless experience from start to finish. Will travel again!"</p>
-                <p>- Emily Johnson</p>
-            </div>
-            <button class="prev" onclick="changeTestimonial(-1)">&#10094;</button>
-            <button class="next" onclick="changeTestimonial(1)">&#10095;</button>
+            <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+            <button class="next" onclick="changeImage(1)">&#10095;</button>
         </div>
     </div>
 
     <div class="section" id="contact">
         <h2>Contact Us</h2>
-        <p>If you have any questions, feel free to reach out!</p>
-        <div class="contact-form">
+        <form class="contact-form">
             <input type="text" placeholder="Your Name" required>
             <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit" class="cta-button">Send Message</button>
-        </div>
+            <textarea rows="4" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
     </div>
 
     <footer>
         <p>&copy; 2024 Trasia Agency. All rights reserved.</p>
-        <a href="#top" class="nav-link" style="color: #fff;">Back to Top</a>
     </footer>
 
     <script>
-        let currentTestimonialIndex = 0;
-        const testimonials = document.querySelectorAll('.testimonial');
+        let currentActivityIndex = 0;
+        const activities = document.querySelectorAll('.activity');
 
-        function changeTestimonial(direction) {
-            testimonials[currentTestimonialIndex].classList.remove('active');
-            currentTestimonialIndex = (currentTestimonialIndex + direction + testimonials.length) % testimonials.length;
-            testimonials[currentTestimonialIndex].classList.add('active');
+        function changeActivity(direction) {
+            activities[currentActivityIndex].classList.remove('active');
+            currentActivityIndex = (currentActivityIndex + direction + activities.length) % activities.length;
+            activities[currentActivityIndex].classList.add('active');
+        }
+
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll('.gallery img');
+        const galleryWrapper = document.getElementById('galleryWrapper');
+
+        function changeImage(direction) {
+            currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
+            galleryWrapper.style.transform = `translateX(-${currentImageIndex * 100}%)`;
         }
 
         function toggleMenu() {
