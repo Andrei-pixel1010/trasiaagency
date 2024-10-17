@@ -8,18 +8,24 @@ body {
     line-height: 1.6;
 }
 header {
-    background: linear-gradient(to bottom, #86e8fc, #9eeece, #c8fbe6);
+    background: rgba(206, 249, 231, 0.8); /* Light background with 80% opacity for transparency */
     color: white;
-    padding: 20px 10px;
+    padding: 20px;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    position: relative;
-}
-header .logo {
-    font-size: 1.8em;
-    font-weight: bold;
-}
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow effect */
+    transition: background 0.3s;
+ }
+
+
+ header .logo {
+     font-size: 2em;
+     font-weight: bold;
+ }
 .menu-toggle {
     background: transparent;
     border: none;
@@ -107,7 +113,25 @@ nav a:hover {
     text-align: center;
     position: relative;
 }
-
+.hero.Pattaya {
+    background: url(https://static.independent.co.uk/2024/02/09/16/newFile.jpg) no-repeat center center/cover;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}.hero.Krabi {
+    background: url(https://static.independent.co.uk/2024/02/09/16/newFile.jpg) no-repeat center center/cover;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
 .hero::after {
     content: "";
     position: absolute;
