@@ -4,414 +4,406 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trasia Agency - Explore Thailand</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bakery&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Bakery', cursive;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #eef3f7 50%, #a6d7e7);
             color: #333;
+            background-color: #f0f4f8;
             line-height: 1.6;
-            overflow-x: hidden;
         }
         header {
-            background: rgba(0, 0, 0, 0.6);
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            transition: background 0.3s ease;
+           background: rgba(206, 249, 231, 0.8); /* Light background with 80% opacity for transparency */
+           color: white;
+           padding: 20px;
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           position: sticky;
+           top: 0;
+           z-index: 1000;
+           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow effect */
+           transition: background 0.3s;
         }
-        header.scrolled {
-            background: rgba(0, 0, 0, 0.8);
-        }
-        .logo {
+
+
+        header .logo {
             font-size: 2em;
-            font-weight: 700;
-            color: #fff;
-        }
-        .nav-links {
-            display: flex;
-            gap: 20px;
-        }
-        .nav-link {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1em;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: background 0.3s, color 0.3s;
-        }
-        .nav-link:hover {
-            background: rgba(255, 255, 255, 0.2);
-            color: #9eeece;
+            font-weight: bold;
         }
         .menu-toggle {
             background: transparent;
             border: none;
             color: white;
-            font-size: 2em;
+            font-size: 1.5em;
             cursor: pointer;
         }
         .hero {
             background: url('https://www.adventurouskate.com/wp-content/uploads/2019/12/Koh-Phi-Phi.jpg') no-repeat center center/cover;
-            height: 100vh;
+            height: 500px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            color: #fff;
+            justify-content: center;
+            color: white;
             text-align: center;
-            padding: 20px;
             position: relative;
-            animation: fadeIn 2s ease-in-out;
-            box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 1s ease-in;
         }
         .hero h1 {
-            font-size: 3em;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            font-size: 3.5em;
             margin: 0;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
         }
         .cta-button {
-            background: linear-gradient(to bottom, #cef9e7, #9eeece);
+            background-color: #ff4081;
             color: white;
             padding: 15px 30px;
             text-decoration: none;
-            border-radius: 30px;
+            border-radius: 5px;
             font-size: 1.5em;
-            transition: background 0.3s, transform 0.3s;
+            transition: background 0.3s;
             margin-top: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
         .cta-button:hover {
-            background: #86e8fc;
-            transform: scale(1.05);
+            background-color: #f50057;
         }
         .section {
-            padding: 80px 20px;
+            padding: 40px 20px;
             text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-        .section h2 {
-            font-size: 2.5em;
-            margin-bottom: 40px;
-            font-family: 'Bakery', cursive;
-            color: #333;
-            position: relative;
-        }
-        .section h2::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 5px;
-            background: #9eeece;
-            margin: 10px auto;
-            border-radius: 5px;
+            background-color: #fff;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
         .destinations {
             display: flex;
-            justify-content: center;
             flex-wrap: wrap;
-            gap: 30px;
+            justify-content: center;
+            gap: 20px;
         }
         .destination {
-            background-color: #fff;
-            border-radius: 15px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
             padding: 20px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
             width: 300px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
             position: relative;
             overflow: hidden;
-            text-align: center;
         }
         .destination img {
-            border-radius: 15px;
+            border-radius: 10px;
             width: 100%;
-            max-height: 200px; /* Limit the maximum height */
+            height: 200px;
             object-fit: cover;
-            transition: transform 0.5s;
-        }
-        .destination:hover img {
-            transform: scale(1.1);
         }
         .destination h3 {
-            margin: 10px 0;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            margin: 15px 0 5px;
+            color: #4CAF50;
             font-size: 1.5em;
-            color: #333;
         }
         .destination p {
             color: #666;
         }
         .destination:hover {
             transform: translateY(-5px);
-            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
-        .activity-container {
+        .testimonial-container, .activity-container, .gallery-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             position: relative;
-            max-width: 400px;
-            margin: auto;
         }
-        .activity {
+        .testimonial, .activity, .gallery {
             display: none;
             text-align: center;
         }
-        .activity.active {
+        .testimonial.active, .activity.active, .gallery.active {
             display: block;
         }
-        .activity img {
-            border-radius: 15px;
-            width: 100%;
-            max-height: 200px; /* Limit the maximum height */
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        .activity:hover img {
-            transform: scale(1.1);
-        }
-        .gallery {
-            display: flex;
-            overflow: hidden;
-            width: 100%;
-        }
-        .gallery img {
-            min-width: 100%;
-            max-height: 300px; /* Limit the maximum height */
-            object-fit: cover; /* Maintain aspect ratio */
-            transition: transform 0.5s;
-        }
-        .gallery-wrapper {
-            display: flex;
-            transition: transform 0.5s;
-        }
         .prev, .next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
+            background: transparent;
             border: none;
+            font-size: 2em;
             cursor: pointer;
-            padding: 10px;
-        }
-        .prev {
-            left: 10px;
-        }
-        .next {
-            right: 10px;
+            color: #4CAF50;
         }
         footer {
-            background: rgba(0, 0, 0, 0.7);
+            background: linear-gradient(to bottom, #cef9e7, #9eeece, #86e8fc);
             color: white;
             padding: 20px;
             text-align: center;
-            font-size: 0.9em;
         }
-        .contact-form {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
-            margin: 0 auto;
+        .popular-activities {
             display: flex;
-            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
         }
-        .contact-form input, 
-        .contact-form textarea {
+        .activity img, .gallery img {
             width: 100%;
-            padding: 12px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            transition: border 0.3s;
+            height: 200px;
+            border-radius: 10px;
+            object-fit: cover;
         }
-        .contact-form input:focus, 
-        .contact-form textarea:focus {
-            border-color: #9eeece;
-            outline: none;
+        .activity h3, .gallery h3 {
+            margin: 10px 0;
+            color: #4CAF50;
         }
-        .contact-form button {
-            background: linear-gradient(to bottom, #cef9e7, #9eeece);
-            color: white;
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.2em;
-            cursor: pointer;
-            transition: background 0.3s, transform 0.3s;
+        .menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            z-index: 1000;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
-        .contact-form button:hover {
+        .menu-overlay nav {
+            text-align: center;
+        }
+        .menu-overlay nav a {
+            display: block;
+            font-size: 2em;
+            margin: 10px 0;
+            padding: 10px;
+            background: #cef9e7;
+            border-radius: 10px;
+            color: #333;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        .menu-overlay nav a:hover {
             background: #86e8fc;
-            transform: scale(1.05);
         }
-        /* Media Queries for Mobile Responsiveness */
+        .close-button {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2em;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
         @media (max-width: 768px) {
-            .nav-links {
-                flex-direction: column;
-                background: rgba(0, 0, 0, 0.9);
-                position: absolute;
-                top: 60px;
-                right: 0;
-                width: 200px;
-                display: none;
-            }
-            .nav-links.active {
-                display: flex;
-            }
-            .menu-toggle {
-                display: block;
-            }
             .hero h1 {
                 font-size: 2.5em;
             }
             .cta-button {
                 font-size: 1.2em;
             }
-            .section h2 {
+        }
+        @media (max-width: 480px) {
+            .hero h1 {
                 font-size: 2em;
             }
+            .destinations {
+                flex-direction: column;
+                align-items: center;
+            }
             .destination {
-                width: 100%;
-                max-width: 300px;
+                width: 90%;
             }
         }
     </style>
 </head>
-<body>
+
+<body onload="fadeIn()">
     <header>
         <div class="logo">Trasia Agency</div>
-        <nav class="nav-links" id="navLinks">
-            <a href="#destinations" class="nav-link">Destinations</a>
-            <a href="#activities" class="nav-link">Activities</a>
-            <a href="#gallery" class="nav-link">Gallery</a>
-            <a href="#testimonials" class="nav-link">Testimonials</a>
-            <a href="#contact" class="nav-link">Contact</a>
-        </nav>
         <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
     </header>
-
-    <div class="hero">
-        <h1>Discover the Wonders of Thailand</h1>
-        <a href="#destinations" class="cta-button">Explore Now</a>
+    
+    <div class="menu-overlay" id="menuOverlay">
+        <button class="close-button" onclick="toggleMenu()">✖</button>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="about.html">About Us</a>
+            <a href="Services.html">Services</a>
+            <a href="contact.html">Contact</a>
+        </nav>
     </div>
-
-    <div class="section" id="destinations">
-        <h2>Beautiful Destinations</h2>
+    
+    <div class="hero">
+        <h1>Explore Thailand with Us!</h1>
+        <a href="booking.html" class="cta-button">Book Now</a>
+    </div>
+    
+    <div class="section">
+        <h2>Featured Destinations</h2>
         <div class="destinations">
             <div class="destination">
-                <img src="https://media.istockphoto.com/id/1283402351/photo/tropical-beach-on-sunset-time.jpg?s=612x612&w=0&k=20&c=YV9OZw2FgB1F4U2x50TykwnF4uN4B6MkrgBBKnD8M2g=" alt="Beach">
-                <h3>Phuket</h3>
-                <p>Experience the stunning beaches and vibrant nightlife.</p>
-            </div>
-            <div class="destination">
-                <img src="https://media.istockphoto.com/id/1174272999/photo/temple-of-the-emerald-buddha-bangkok.jpg?s=612x612&w=0&k=20&c=3L_4_J52p41zxyk2T3G1Tz1uG3t2psHohK4kOn6bndU=" alt="Temple">
+                <img src="https://www.travelseewrite.com/wp-content/uploads/2022/09/Rattanakosin-is-the-royal-area-of-Bangkok.jpeg" alt="Bangkok">
                 <h3>Bangkok</h3>
-                <p>Explore the rich culture and historic temples.</p>
+                <p>Experience the vibrant culture and historic landmarks.</p>
+                <a href="bangkok.html" class="cta-button">Learn More</a>
             </div>
             <div class="destination">
-                <img src="https://media.istockphoto.com/id/1041441390/photo/krabi-beach-thailand.jpg?s=612x612&w=0&k=20&c=EDp1GAp5Cr2KGr12Sr3tT_PfKPHzK5OItz4Q0uBkjAk=" alt="Krabi">
-                <h3>Krabi</h3>
-                <p>Discover the limestone cliffs and beautiful islands.</p>
+                <img src="https://d3h1lg3ksw6i6b.cloudfront.net/media/image/2023/09/13/4969e4b8a93c41f6b1f2d161eaade88f_Chiang_Mai_Where_To_Eat_Drink_Stay_And_Play_In_The_Cultural_Capital_Of_Northern_Thaila.jpg" alt="Chiang Mai">
+                <h3>Chiang Mai</h3>
+                <p>Explore the natural beauty and cultural heritage.</p>
+                <a href="chiangmai.html" class="cta-button">Learn More</a>
             </div>
-        </div>
-    </div>
-
-    <div class="section" id="activities">
-        <h2>Popular Activities</h2>
-        <div class="activity-container">
-            <div class="activity active">
-                <img src="https://thethaiger.com/wp-content/uploads/2021/08/dragon-crest-mountain-krabi-thailand-1.webp" alt="Hiking">
-                <h3>Hiking in Doi Inthanon</h3>
-                <p>Explore Thailand's highest peak and its stunning nature trails.</p>
+            <div class="destination">
+                <img src="https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2024/06/27/0770dffe94b320e8c7ff880531213730_1000x1000.jpg" alt="Phuket">
+                <h3>Phuket</h3>
+                <p>Relax on the stunning beaches and enjoy vibrant nightlife.</p>
+                <a href="phuket.html" class="cta-button">Learn More</a>
             </div>
-            <div class="activity">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTetmepkgbLvkA8e8zMArVQc65ywqIwZzjS3Q&s" alt="Cooking Class">
-                <h3>Thai Cooking Class</h3>
-                <p>Learn to cook authentic Thai dishes with local chefs.</p>
+            <div class="destination">
+                <img src="https://www.pacificprime.com/blog/wp-content/uploads/Tiny-Thai-flag-on-the-map-next-to-Thailand-1138x493.jpg" alt="Explore Other Cities">
+                <h3>Explore Other Cities</h3>
+                <p>Discover the hidden gems of Thailand.</p>
+                <a href="destinations.html" class="cta-button">Learn More</a>
             </div>
-            <div class="activity">
-                <img src="https://phuketdivecenter.com/wp-content/uploads/2019/12/PP-G1.jpg" alt="Diving">
-                <h3>Scuba Diving in Phuket</h3>
-                <p>Dive into the crystal-clear waters and explore vibrant marine life.</p>
-            </div>
-            <button class="prev" onclick="changeActivity(-1)">&#10094;</button>
-            <button class="next" onclick="changeActivity(1)">&#10095;</button>
         </div>
     </div>
 
     <div class="section">
-        <h2>Gallery</h2>
-        <div class="gallery">
-            <div class="gallery-wrapper" id="galleryWrapper">
-                <img src="https://media.istockphoto.com/id/1011241694/photo/thai-traditional-wooden-longtail-boat-and-beautiful-sand-beach.jpg?s=612x612&w=0&k=20&c=3Al0xNJgX7LXSiNFbbZFLG2DcHIEtO_XDdgvvRBImUk=" alt="Thai Landscape">
-                <img src="https://media.istockphoto.com/id/1412045138/photo/phuket-walking-street-night-market-in-phuket.jpg?s=612x612&w=0&k=20&c=VqW9i3xg8ghLE7INFyXchfUKBFG1YVHnoA9tjulJfpk=" alt="Street Market">
-                <img src="https://thumbor.thebear.group/unsafe/630x0/https://directus-deskthebear.s3.ap-southeast-1.amazonaws.com/uploads/9cd07d03-097e-4bc3-acaf-969f956d874a.jpeg" alt="Temple">
-                <img src="https://www.expique.com/wp-content/uploads/2021/02/Thai-food-2.jpg" alt="Thai Food">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnKebZlkNqWUgNzRUTzWaiW4qeGKOV_ZGhuw&s" alt="Beach Sunset">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUR7s0OHKb2g36d__9BJLltep_F6615Uc5EA&s" alt="Cultural Dance">
+        <h2>Popular Activities</h2>
+        <div class="activity-container">
+            <div class="activity active">
+                <img src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/6611109342083/Three-Miracle-Islands-with-Water-Sports-Activities-in-Pattaya-Thailand-e5743757-20f3-4ff6-9659-45c01029c8de.jpeg?tr=q-60,c-at_max,w-1280,h-720&_src=imagekit" alt="Beach Activities">
+                <h3>Beach Activities</h3>
             </div>
-            <button class="prev" onclick="changeImage(-1)">&#10094;</button>
-            <button class="next" onclick="changeImage(1)">&#10095;</button>
+            <div class="activity">
+                <img src="https://thailand.tripcanvas.co/wp-content/uploads/2017/08/8-1-by-wondersinyourhands.jpg" alt="Cultural Experiences">
+                <h3>Cultural Experiences</h3>
+            </div>
+            <div class="activity">
+                <img src="https://www.panorama-destination.com/wp-content/uploads/2017/11/Top-10-Street-Foods-in-Thailand-2.jpg" alt="Food Tours">
+                <h3>Food Tours</h3>
+            </div>
+            <button class="prev" onclick="showActivity(-1)">❮</button>
+            <button class="next" onclick="showActivity(1)">❯</button>
         </div>
     </div>
 
-    <div class="section" id="contact">
-        <h2>Contact Us</h2>
-        <form class="contact-form">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea rows="4" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
+    <div class="section">
+        <h2>Thailand Gallery</h2>
+        <div class="gallery-container">
+            <div class="gallery active">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQm1y4lmb8qWrxW9BKiV2TfpMuQlPk6Tt-wTA&s" alt="Gallery Image 1">
+                <h3>Beautiful Beaches</h3>
+            </div>
+            <div class="gallery">
+                <img src="https://www.thailandbytrain.com/TempleTerms/P1000284.jpg" alt="Gallery Image 2">
+                <h3>Stunning Temples</h3>
+            </div>
+            <div class="gallery">
+                <img src="https://pyxpa.cdn.setuix.net/resources/songkran-festival-phuket.jpg" alt="Gallery Image 3">
+                <h3>Cultural Festivals</h3>
+            </div>
+            <button class="prev" onclick="showGallery(-1)">❮</button>
+            <button class="next" onclick="showGallery(1)">❯</button>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Customer Testimonials</h2>
+        <div class="testimonial-container">
+            <div class="testimonial active">
+                <p>
+                    <img src="https://www.andreearaicu.ro/wp-content/uploads/2023/03/beautiful-model-sitting-armchair-waving-hair-scaled-e1678441697982.jpg" alt="Francisca Filip" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;"> 
+                    "Best travel agency! Made my vacation unforgettable!" 
+                    <br>- Francisca Filip.
+                </p>
+            </div>
+            <div class="testimonial">
+                <p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTChOP808ehyNwa7KIcciHVS8Ujt-OILRG4w&s" alt="Tofan Alexandra" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;"> 
+                    "Great service and fantastic deals!" 
+                    <br>- Alexandra T.
+                </p>
+            </div>
+            <div class="testimonial">
+                <p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxc_NV8Pa1g1cOLzX378UcB5sGqO3gUaOOzQ&s" alt="Denis" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;"> 
+                    "Unforgettable experiences!" 
+                    <br>- Denisa A.
+                </p>
+            </div>
+            <button class="prev" onclick="showTestimonial(-1)">❮</button>
+            <button class="next" onclick="showTestimonial(1)">❯</button>
+        </div>
     </div>
 
     <footer>
-        <p>&copy; 2024 Trasia Agency. All rights reserved.</p>
+        <p>© 2024 Trasia Agency. All rights reserved.</p>
+        <p>Contact: +40727300463</p>
     </footer>
 
     <script>
+        let currentTestimonialIndex = 0;
         let currentActivityIndex = 0;
-        const activities = document.querySelectorAll('.activity');
+        let currentGalleryIndex = 0;
 
-        function changeActivity(direction) {
+        function showTestimonial(direction) {
+            const testimonials = document.querySelectorAll('.testimonial');
+            testimonials[currentTestimonialIndex].classList.remove('active');
+
+            currentTestimonialIndex += direction;
+
+            if (currentTestimonialIndex < 0) {
+                currentTestimonialIndex = testimonials.length - 1;
+            } else if (currentTestimonialIndex >= testimonials.length) {
+                currentTestimonialIndex = 0;
+            }
+
+            testimonials[currentTestimonialIndex].classList.add('active');
+        }
+
+        function showActivity(direction) {
+            const activities = document.querySelectorAll('.activity');
             activities[currentActivityIndex].classList.remove('active');
-            currentActivityIndex = (currentActivityIndex + direction + activities.length) % activities.length;
+
+            currentActivityIndex += direction;
+
+            if (currentActivityIndex < 0) {
+                currentActivityIndex = activities.length - 1;
+            } else if (currentActivityIndex >= activities.length) {
+                currentActivityIndex = 0;
+            }
+
             activities[currentActivityIndex].classList.add('active');
         }
 
-        let currentImageIndex = 0;
-        const images = document.querySelectorAll('.gallery img');
-        const galleryWrapper = document.getElementById('galleryWrapper');
+        function showGallery(direction) {
+            const galleries = document.querySelectorAll('.gallery');
+            galleries[currentGalleryIndex].classList.remove('active');
 
-        function changeImage(direction) {
-            currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
-            galleryWrapper.style.transform = `translateX(-${currentImageIndex * 100}%)`;
+            currentGalleryIndex += direction;
+
+            if (currentGalleryIndex < 0) {
+                currentGalleryIndex = galleries.length - 1;
+            } else if (currentGalleryIndex >= galleries.length) {
+                currentGalleryIndex = 0;
+            }
+
+            galleries[currentGalleryIndex].classList.add('active');
         }
 
         function toggleMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
+            const menuOverlay = document.getElementById('menuOverlay');
+            menuOverlay.style.display = menuOverlay.style.display === 'flex' ? 'none' : 'flex';
         }
 
-        window.onscroll = function() {
-            const header = document.querySelector('header');
-            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        };
+        function fadeIn() {
+            document.querySelector('.hero').style.opacity = 1;
+        }
     </script>
 </body>
 </html>
