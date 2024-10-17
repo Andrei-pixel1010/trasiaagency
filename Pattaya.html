@@ -14,7 +14,36 @@
         .header {
             text-align: center;
             font-size: 2rem;
-            font-family: 'Baker Street', cursive; /* Set bakery font */
+            font-family: 'Baker Street', cursive;
+            position: relative;
+        }
+        .menu {
+            display: flex; /* Always show menu on larger screens */
+            flex-direction: row;
+            align-items: center;
+        }
+        .menu a {
+            padding: 10px 20px;
+            text-decoration: none;
+            color: black;
+        }
+        .hamburger {
+            display: none; /* Hidden by default */
+            cursor: pointer;
+            font-size: 30px;
+        }
+        @media (max-width: 768px) {
+            .menu {
+                display: none; /* Hide menu on mobile */
+                flex-direction: column; /* Stack links vertically */
+                position: absolute; /* Position menu below hamburger */
+                top: 50px; /* Adjust as needed */
+                background-color: white;
+                width: 100%;
+            }
+            .hamburger {
+                display: block; /* Show hamburger icon on mobile */
+            }
         }
         .activity-container {
             position: relative;
@@ -27,14 +56,14 @@
             display: block;
         }
         .activity h3 {
-            position: absolute; /* Position text over image */
-            bottom: 10px; /* Distance from the bottom */
-            left: 50%; /* Center horizontally */
-            transform: translateX(-50%); /* Center adjustment */
-            color: white; /* White text for visibility */
-            padding: 5px 10px; /* Padding around text */
-            font-size: 1.5rem; /* Font size */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Text shadow */
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            padding: 5px 10px;
+            font-size: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
         img {
             width: 100%;
@@ -87,12 +116,13 @@
             right: 10px;
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Baker+Street&display=swap" rel="stylesheet"> <!-- Link to bakery font -->
+    <link href="https://fonts.googleapis.com/css2?family=Baker+Street&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="logo">Trasia Agency</div>
-        <nav>
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+        <nav class="menu" id="navMenu">
             <a href="index.html">Home</a>
             <a href="destinations.html">Destinations</a>
             <a href="Services.html">Services</a>
@@ -184,6 +214,11 @@
             if (slideIndex > slides.length) {slideIndex = 1}    
             slides[slideIndex - 1].style.display = "block";  
             setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById("navMenu");
+            menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
         }
 
         function openModal(src) {
