@@ -5,41 +5,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking Page</title>
     <link rel="stylesheet" href="stylecity.css"> <!-- Link to external CSS file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Basic font for the page */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+        .slideshow-container {
+            position: relative;
+            max-width: 100%; /* Limit to full width */
+            margin: auto; /* Center the slideshow */
+        }
+        .slide {
+            display: none; /* Hide slides by default */
+        }
+        img {
+            width: 100%; /* Make images responsive */
+            height: 100vh; /* Set height to full viewport height */
+            object-fit: cover; /* Cover the area while maintaining aspect ratio */
+            border-radius: 10px; /* Round corners */
+            display: block; /* Ensure images are block elements */
+            margin: auto; /* Center images */
+            opacity: 0.8; /* Make images slightly transparent */
+            transition: opacity 0.5s; /* Smooth transition for opacity */
+        }
+        img:hover {
+            opacity: 1; /* Full opacity on hover */
+        }
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1000; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+            justify-content: center; /* Center modal content */
+            align-items: center; /* Center modal content */
+        }
+        .modal img {
+            max-width: 90%; /* Limit modal image size */
+            max-height: 90%; /* Limit modal image height */
+            border-radius: 10px; /* Round corners for modal image */
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="logo">Trasia Agency</div>
         <nav>
-            <a href="Trasia1.html">Home</a>
+            <a href="index.html">Home</a>
             <a href="destinations.html">Destinations</a>
-            <a href="#">Services</a>
-            <a href="#">About Us</a>
-            <a href="#">Contact</a>
+            <a href="Services.html">Services</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
         </nav>
     </header>
     
-    <div class="hero">
+    <div class="hero Pattaya">
         <h2>Pattaya</h2>
     </div>
     
     <div class="content">
         <h3>About the City</h3>
-        <p>Bangkok, Thailand's vibrant capital, offers a captivating blend of tradition and modernity. Visitors can explore stunning temples like Wat Pho and Wat Arun, each showcasing intricate architecture and rich history. The bustling markets, such as Chatuchak Weekend Market, provide a feast for the senses with local crafts, delicious street food, and lively atmosphere. Don’t miss a boat ride along the Chao Phraya River for a unique view of the city. Enjoy the vibrant nightlife in areas like Khao San Road and indulge in traditional Thai cuisine at local eateries. With its warm culture and endless attractions, Bangkok is a must-visit destination.</p>
+        <p>Bangkok, Thailand's vibrant capital, offers a captivating blend of tradition and modernity...</p>
         
         <h3>Must-See Attractions</h3>
-        <p>From iconic landmarks to hidden gems, explore the best that the city has to offer. Don’t miss the famous museum, historic district, and lively marketplaces!</p>
+        <p>From iconic landmarks to hidden gems, explore the best that the city has to offer...</p>
         
         <h3>Experience the Local Culture</h3>
-        <p>Immerse yourself in the local culture by trying traditional dishes, attending festivals, and exploring the art scene. The city comes alive with unique experiences waiting to be discovered.</p>
+        <p>Immerse yourself in the local culture by trying traditional dishes...</p>
         
         <h3>Gallery</h3>
-        <div class="gallery">
-            <img src="https://www.brusselsairlines.com/aircore/cache/images/67686/eyJpZGVudGlmaWVyIjoxMTc3NywidHlwZSI6ImFzc2V0In0=_1.webp" alt="Attraction 1" onclick="openModal(this.src)">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTvZP3TVnR-SJrWzWqCrTU7pPCct8evN6O8IH2HLyI8MRsENmAzfkV1q7pKaGzQVuCduw&usqp=CAU" alt="Attraction 2" onclick="openModal(this.src)">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT-mvki1Dpe0M5wmzeYOwM6CPZl4G-006DZfxMdIZDuySamDusZ6kqLoSpBII-_D1VXA4&usqp=CAU" alt="Attraction 3" onclick="openModal(this.src)">
-            <img src="https://www.traveloffpath.com/wp-content/uploads/2022/06/Amazing-view-of-the-city-of-Bangkok-Thailand.jpg" alt="Attraction 4" onclick="openModal(this.src)">
-            <img src="https://media.nomadicmatt.com/2023/bangkokskyline.jpg" alt="Attraction 5" onclick="openModal(this.src)">
-            <img src="https://www.holidify.com/images/bgImages/BANGKOK%20.jpg" alt="Attraction 6" onclick="openModal(this.src)">
+        <div class="slideshow-container">
+            <div class="slide">
+                <img src="https://www.brusselsairlines.com/aircore/cache/images/67686/eyJpZGVudGlmaWVyIjoxMTc3NywidHlwZSI6ImFzc2V0In0=_1.webp" alt="Attraction 1" onclick="openModal(this.src)">
+            </div>
+            <div class="slide">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTvZP3TVnR-SJrWzWqCrTU7pPCct8evN6O8IH2HLyI8MRsENmAzfkV1q7pKaGzQVuCduw&usqp=CAU" alt="Attraction 2" onclick="openModal(this.src)">
+            </div>
+            <div class="slide">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT-mvki1Dpe0M5wmzeYOwM6CPZl4G-006DZfxMdIZDuySamDusZ6kqLoSpBII-_D1VXA4&usqp=CAU" alt="Attraction 3" onclick="openModal(this.src)">
+            </div>
+            <div class="slide">
+                <img src="https://www.traveloffpath.com/wp-content/uploads/2022/06/Amazing-view-of-the-city-of-Bangkok-Thailand.jpg" alt="Attraction 4" onclick="openModal(this.src)">
+            </div>
+            <div class="slide">
+                <img src="https://media.nomadicmatt.com/2023/bangkokskyline.jpg" alt="Attraction 5" onclick="openModal(this.src)">
+            </div>
+            <div class="slide">
+                <img src="https://www.holidify.com/images/bgImages/BANGKOK%20.jpg" alt="Attraction 6" onclick="openModal(this.src)">
+            </div>
         </div>
     </div>
 
@@ -54,16 +112,29 @@
     </footer>
 
     <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            const slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex - 1].style.display = "block";  
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+
         function openModal(src) {
             document.getElementById("modalImage").src = src;
-            document.getElementById("myModal").style.display = "flex"; // Use flex to center the image
+            document.getElementById("myModal").style.display = "flex"; 
         }
 
         function closeModal() {
             document.getElementById("myModal").style.display = "none";
         }
 
-        // Ensure the modal is closed on page load
         window.onload = function() {
             closeModal();
         };
