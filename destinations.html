@@ -14,14 +14,26 @@
             background-color: #f9f9f9; /* Light background for contrast */
         }
         header {
-            background: #926f34; /* Gold header */
-            color: white;
-            padding: 20px 10px; /* Adjusted padding for smaller screens */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+           background: rgba(114, 255, 229, 0.8); /* Light background with 80% opacity for transparency */
+           color: #ffffff;
+           padding: 20px;
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           position: sticky;
+           top: 0;
+           z-index: 1000;
+           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow effect */
+           transition: background 0.3s;
         }
+        .menu-toggle {
+            background: transparent;
+            border: none;
+            color: #ffffff;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
         header .logo {
             font-size: 1.5em; /* Slightly smaller logo size */
             font-weight: bold;
@@ -74,9 +86,9 @@
             margin-top: 10px;
         }
         footer {
-            background: #926f34; /* Gold footer */
+            background: linear-gradient(to bottom, #cef9e7, #9eeece, #86e8fc);
             color: white;
-            padding: 10px 20px;
+            padding: 20px;
             text-align: center;
         }
 
@@ -158,4 +170,69 @@
             </a>
             <a href="Khaoyai.html" class="destination" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQj5ICYitEerEAJbfXkBJFes_UuIsdUcWyOYA&s');">
                 <h2>Khao Yai</h2>
-                <p>Discover rock climbing and beautiful beach scenery.</p
+                <p>Discover rock climbing and beautiful beach scenery.</p>
+            </a>
+        </div>
+    </div>
+        
+    
+        
+        <footer>
+            <p>Contact us: Trasiaagency@gmail.com | +40727300463</p>
+            <p>&copy; 2024 Trasia Agency. All rights reserved.</p>
+        </footer>
+        
+        <script>
+            let slideIndex = 0;
+            let currentActivityIndex = 0;
+        
+            showSlides();
+        
+            function showSlides() {
+                const slides = document.getElementsByClassName("slide");
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";  
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) {slideIndex = 1}    
+                slides[slideIndex - 1].style.display = "block";  
+                setTimeout(showSlides, 3000); // Change image every 3 seconds
+            }
+        
+            function toggleMenu() {
+                const menu = document.getElementById("navMenu");
+                menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+            }
+        
+            function openModal(src) {
+                document.getElementById("modalImage").src = src;
+                document.getElementById("myModal").style.display = "flex"; 
+            }
+        
+            function closeModal() {
+                document.getElementById("myModal").style.display = "none";
+            }
+        
+            window.onload = function() {
+                closeModal();
+            };
+        
+            function showActivity(direction) {
+                const activities = document.querySelectorAll('.activity');
+                activities[currentActivityIndex].classList.remove('active');
+        
+                currentActivityIndex += direction;
+        
+                if (currentActivityIndex < 0) {
+                    currentActivityIndex = activities.length - 1;
+                } else if (currentActivityIndex >= activities.length) {
+                    currentActivityIndex = 0;
+                }
+        
+                activities[currentActivityIndex].classList.add('active');
+            }
+        </script>
+        
+    </body>
+    </html>
+        
