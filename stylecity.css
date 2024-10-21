@@ -9,7 +9,7 @@ body {
 }
 header {
     background: rgba(206, 249, 231, 0.8); /* Light background with 80% opacity for transparency */
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 20px;
     display: flex;
     justify-content: space-between;
@@ -29,19 +29,30 @@ header {
 .menu-toggle {
     background: transparent;
     border: none;
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 3.0em;
     cursor: pointer;
     margin: 10px 0; /* Center the button with vertical margin */
     align-self: flex-start; /* Align to the left */
 }
-
+.cta-button {
+    background: linear-gradient(to bottom, #cef9e7, #9eeece, #86e8fc);
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background 0.3s;
+}
+.cta-button:hover {
+    background: #86e3f5;
+}
 nav {
     margin-top: 10px; /* Space between title and nav */
 }
 
 nav a {
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     margin: 0 15px;
     transition: color 0.3s;
@@ -119,11 +130,11 @@ nav a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: rgb(72, 255, 0);
     text-align: center;
     position: relative;
-}.hero.Krabi {
-    background: url(https://static.independent.co.uk/2024/02/09/16/newFile.jpg) no-repeat center center/cover;
+}.hero.krabi {
+    background: url(https://cdn.pixabay.com/photo/2014/10/15/09/50/sunset-489427_1280.jpg) no-repeat center center/cover;
     height: 50vh;
     display: flex;
     align-items: center;
