@@ -1,250 +1,266 @@
-/* Global Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #fceed6
-    color: #333;
-    line-height: 1.6;
-}
-header {
-    background: rgba(206, 249, 231, 0.8); /* Light background with 80% opacity for transparency */
-    color: rgb(0, 0, 0);
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow effect */
-    transition: background 0.3s;
- }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Page</title>
+    <link rel="stylesheet" href="stylecity.css"> <!-- Link to external CSS file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            text-align: center;
+            font-size: 2rem;
+            font-family: 'Baker Street', cursive;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+        .menu {
+            display: flex; /* Always show menu on larger screens */
+            flex-direction: row;
+            align-items: center;
+            background-color: transparent; /* Ensure the menu has no background */
+            margin: 0; /* Remove any margin */
+            padding: 0; /* Remove any padding */
+            list-style-type: none; /* Remove bullets */
+        }
+        .menu a {
+            padding: 10px 20px;
+            text-decoration: none;
+            color: black;
+        }
+        .hamburger {
+            display: none; /* Hidden by default */
+            cursor: pointer;
+            font-size: 30px;
+            background: none;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+        @media (max-width: 768px) {
+            .menu {
+                display: none; /* Hide menu on mobile */
+                flex-direction: column; /* Stack links vertically */
+                position: absolute; /* Position menu below hamburger */
+                top: 50px; /* Adjust as needed */
+                background-color: white;
+                width: 100%;
+            }
+            .hamburger {
+                display: block; /* Show hamburger icon on mobile */
+            }
+        }
+        .activity-container {
+            position: relative;
+        }
+        .activity {
+            display: none;
+            position: relative;
+        }
+        .activity.active {
+            display: block;
+        }
+        .activity h3 {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            padding: 5px 10px;
+            font-size: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        img {
+            width: 100%;
+            height: 50vh;
+            object-fit: cover;
+            border-radius: 10px;
+            display: block;
+            margin: auto;
+            transition: opacity 0.5s;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal img {
+            max-width: 60%;
+            max-height: 60%;
+            border-radius: 10px;
+        }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            font-size: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+            transition: background-color 0.3s;
+        }
+        .arrow:hover {
+            background-color: rgba(255, 255, 255, 1);
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Baker+Street&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">Trasia Agency</div>
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+        <nav class="menu" id="navMenu">
+            <a href="index.html">Home</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="Services.html">Services</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <a href="Booking.html">BOOK NOW</a>
+        </nav>
+    </header>
+    
+    <div class="hero krabi">
+        <h2>Krabi</h2>
+    </div>
+    
+    <div class="content">
+        <h3>Despre Oras</h3>
+        <p>Krabi, situată pe coasta de sud a Thailandei, este o destinație de vis, cunoscută pentru peisajele sale spectaculoase. Plajele cu nisip alb și ape turcoaz, precum Railay Beach și Ao Nang, atrag turiști din întreaga lume. Regiunea este împădurită, cu stânci calcaroase impresionante și insule pitorești, cum ar fi Koh Phi Phi. Cultura locală este vibrantă, cu temple frumoase și piețe pline de viață. Vizitatorii pot explora gastronomia thailandeză autentică și pot interacționa cu localnicii prietenoși. Krabi oferă un refugiu liniștit, unde natura și tradițiile se îmbină armonios, creând o experiență memorabilă.</p>
+        
+        <h3>Atractii</h3>
+        <p>Krabi ofera atractii nenumarate. Cateva dintre acestea ar fii: Scuba Diving, drumetii prin natura, calaritul de elefanti, temple Budhiste cu arhitectura si istorie deosebita si multe altele.</p>
+        
+        <h3>Cultura locala</h3>
+        <p>Viziteaza pietele locale si incearca mancarea stradala pentru a expermienta cultura Thailandezeasca</p>
+        
+        <div class="section">
+            <h2 class="header">Popular Activities</h2>
+            <div class="activity-container">
+                <div class="activity active">
+                    <img src="https://cdn.pixabay.com/photo/2015/06/27/19/39/parasailing-823771_1280.jpg" alt="Beach Activities">
+                    <h3>Activitati pe plaja</h3>
+                </div>
+                <div class="activity">
+                    <img src="https://cdn.pixabay.com/photo/2019/03/01/21/31/thailand-4028725_1280.jpg" alt="Elephant Riding">
+                    <h3>Calaritul de elefanti</h3>
+                </div>
+                <div class="activity">
+                    <img src="https://cdn.pixabay.com/photo/2016/01/19/14/50/reef-1148995_1280.jpg" alt="Food Tours">
+                    <h3>Scuba Diving</h3>
+                </div>
+                <button class="arrow prev" onclick="showActivity(-1)">❮</button>
+                <button class="arrow next" onclick="showActivity(1)">❯</button>
+            </div>
+        </div>
+    
+        <h3 class="header">Gallery</h3>
+        <div class="slideshow-container">
+            <div class="slide">
+                <img src="https://cdn.pixabay.com/photo/2019/10/08/19/40/thailand-4535904_1280.jpg" alt="Attraction 1" onclick="openModal(this.src)">
+            </div>
+            <div class="slide">
+                <img src="https://cdn.pixabay.com/photo/2020/01/30/20/18/nature-4806454_1280.jpg" alt="Attraction 2" onclick="openModal(this.src)">
+            </div>
+            <div class="slide">
+                <img src="https://cdn.pixabay.com/photo/2017/05/03/19/08/railay-bay-2281883_1280.jpg" alt="Attraction 3" onclick="openModal(this.src)">
+            </div>
+            <div class="slide">
+                <img src="https://cdn.pixabay.com/photo/2020/03/21/00/18/thailand-4952349_1280.jpg" alt="Attraction 4" onclick="openModal(this.src)">
+            </div>
+            <div class="slide">
+                <img src="https://cdn.pixabay.com/photo/2020/02/16/07/58/thailand-4852838_1280.jpg" alt="Attraction 5" onclick="openModal(this.src)">
+            </div>
+            <div class="slide">
+                <img src="https://cdn.pixabay.com/photo/2022/01/02/22/35/nature-6911350_1280.jpg" alt="Attraction 6" onclick="openModal(this.src)">
+            </div>
+        </div>
+    </div>
 
+    <div id="myModal" class="modal" onclick="closeModal()">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modalImage" src="" alt="Modal Image">
+    </div>
 
- header .logo {
-     font-size: 2em;
-     font-weight: bold;
- }
-.menu-toggle {
-    background: transparent;
-    border: none;
-    color: rgb(0, 0, 0);
-    font-size: 3.0em;
-    cursor: pointer;
-    margin: 10px 0; /* Center the button with vertical margin */
-    align-self: flex-start; /* Align to the left */
-}
-.cta-button {
-    background: linear-gradient(to bottom, #cef9e7, #9eeece, #86e8fc);
-    color: rgb(255, 255, 255);
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1em;
-    transition: background 0.3s;
-}
-.cta-button:hover {
-    background: #86e3f5;
-}
-nav {
-    margin-top: 10px; /* Space between title and nav */
-}
+    <footer>
+        <p>Contact us: Trasiaagency@gmail.com | +40727300463</p>
+        <p>&copy; 2024 Trasia Agency. All rights reserved.</p>
+    </footer>
 
-nav a {
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    margin: 0 15px;
-    transition: color 0.3s;
-}
+    <script>
+        let slideIndex = 0;
+        let currentActivityIndex = 0;
 
-nav a:hover {
-    color: #ffcc00; /* Hover effect */
-}
-/* Media Queries for Hamburger Menu */
-@media (max-width: 768px) {
-    nav {
-        display: none; /* Hide nav by default */
-        flex-direction: column; /* Stack items vertically */
-        position: absolute;
-        background-color: #333;
-        top: 50px; /* Adjust based on header height */
-        right: 0;
-        width: 200px; /* Set width for the menu */
-    }
+        showSlides();
 
-    .menu-toggle {
-        display: block; /* Show the button on smaller screens */
-    }
+        function showSlides() {
+            const slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex - 1].style.display = "block";  
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
 
-    nav.visible {
-        display: flex; /* Show nav when toggled */
-    }
+        function toggleMenu() {
+            const menu = document.getElementById("navMenu");
+            menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+        }
 
-    nav ul {
-        flex-direction: column; /* Stack links vertically */
-        width: 100%; /* Full width */
-    }
+        function openModal(src) {
+            document.getElementById("modalImage").src = src;
+            document.getElementById("myModal").style.display = "flex"; 
+        }
 
-    nav ul li {
-        margin: 10px 0; /* Vertical spacing */
-    }
-}
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
 
-.hidden {
-    display: none; /* Class to hide menu */
-}
-.hero.Bangkok {
-    background: url(https://assets.anantara.com/image/upload/q_auto,f_auto/media/minor/anantara/images/brandpage/destinations/asia/thailand-bangkok.jpg) no-repeat center center/cover;
-    height: 50vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-    position: relative;
-}
-.hero.Chiangmai {
-    background: url(https://static.independent.co.uk/2024/02/09/16/newFile.jpg) no-repeat center center/cover;
-    height: 50vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-    position: relative;
-}
-.hero.Doiinthanon {
-    background: url(https://static.independent.co.uk/2024/02/09/16/newFile.jpg) no-repeat center center/cover;
-    height: 50vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-    position: relative;
-}
-.hero.Pattaya {
-    background: url(https://images.unsplash.com/photo-1702546330003-5d4dec1563c3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGF0dGF5YXxlbnwwfDB8MHx8fDA%3D) no-repeat center center/cover;
-    height: 50vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    position: relative;
-}.hero.krabi {
-    background: url(https://cdn.pixabay.com/photo/2014/10/15/09/50/sunset-489427_1280.jpg) no-repeat center center/cover;
-    height: 50vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-    position: relative;
-}
-.hero::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.2);
-}
+        window.onload = function() {
+            closeModal();
+        };
 
-.hero h2 {
-    font-size: 3em;
-    z-index: 1;
-}
+        function showActivity(direction) {
+            const activities = document.querySelectorAll('.activity');
+            activities[currentActivityIndex].classList.remove('active');
 
-.content {
-    padding: 40px 20px;
-    max-width: 800px;
-    margin: 20px auto;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
-}
+            currentActivityIndex += direction;
 
-.content h3 {
-    color: #000000;
-    margin-bottom: 15px;
-}
+            if (currentActivityIndex < 0) {
+                currentActivityIndex = activities.length - 1;
+            } else if (currentActivityIndex >= activities.length) {
+                currentActivityIndex = 0;
+            }
 
-.content p {
-    margin-bottom: 20px;
-    font-size: 1.1em;
-    line-height: 1.8;
-}
+            activities[currentActivityIndex].classList.add('active');
+        }
+    </script>
 
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-}
-
-.gallery img {
-    width: calc(33% - 10px);
-    height: 200px; /* Set a fixed height */
-    object-fit: cover; /* Ensure images cover the area without distortion */
-    border-radius: 8px;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-    cursor: pointer; /* Change cursor to pointer */
-}
-
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1001; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
-    justify-content: center; /* Center content */
-    align-items: center; /* Center content */
-    display: flex; /* Use flex to center the image */
-}
-
-.modal img {
-    max-width: 90%; /* Responsive */
-    max-height: 90%; /* Responsive */
-    border-radius: 8px;
-}
-
-.close {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    color: white;
-    font-size: 30px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-footer {
-    background: linear-gradient(to bottom, #cef9e7, #9eeece,#86e8fc );
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-@media (max-width: 768px) {
-    .hero h2 {
-        font-size: 2.5em;
-    }
-
-    .gallery img {
-        width: calc(50% - 10px); /* Two images per row on smaller screens */
-        height: 150px; /* Adjust height for smaller screens */
-    }
-}
-
-@media (max-width: 480px) {
-    .gallery img {
-        width: 100%; /* Full width on mobile */
-        height: 100px; /* Adjust height for mobile */
-    }
-}
+</body>
+</html>
