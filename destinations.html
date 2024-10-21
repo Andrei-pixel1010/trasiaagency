@@ -3,58 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Destinations in Thailand</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+    <title>Booking Page</title>
+    <link rel="stylesheet" href="stylecity.css"> <!-- Link to external CSS file -->
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            color: #333;
-            background-color: #f9f9f9; /* Light background for contrast */
         }
-        header {
-           background: rgba(114, 255, 229, 0.8); /* Light background with 80% opacity for transparency */
-           color: #ffffff;
-           padding: 20px;
-           display: flex;
-           justify-content: space-between;
-           align-items: center;
-           position: sticky;
-           top: 0;
-           z-index: 1000;
-           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow effect */
-           transition: background 0.3s;
-        }
-        .menu-toggle {
-            background: transparent;
-            border: none;
-            color: #ffffff;
-            font-size: 1.5em;
-            cursor: pointer;
-        }
-
-        header .logo {
-            font-size: 1.5em; /* Slightly smaller logo size */
-            font-weight: bold;
-        }
-        nav {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        nav a {
-            color: white;
-            text-decoration: none; /* No underline */
-            margin: 0 10px;
-            font-weight: 500;
-        }
-        nav a:hover {
-            text-decoration: underline; /* Add underline on hover for clarity */
-        }
-        .section {
-            padding: 20px;
+        .header {
             text-align: center;
+            font-size: 2rem;
+            font-family: 'Baker Street', cursive;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+        .menu {
+            display: flex; /* Always show menu on larger screens */
+            flex-direction: row;
+            align-items: center;
+            background-color: transparent; /* Ensure the menu has no background */
+            margin: 0; /* Remove any margin */
+            padding: 0; /* Remove any padding */
+            list-style-type: none; /* Remove bullets */
+        }
+        .menu a {
+            padding: 10px 20px;
+            text-decoration: none;
+            color: black;
+        }
+        .hamburger {
+            display: none; /* Hidden by default */
+            cursor: pointer;
+            font-size: 30px;
+            background: none;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+        @media (max-width: 768px) {
+            .menu {
+                display: none; /* Hide menu on mobile */
+                flex-direction: column; /* Stack links vertically */
+                position: absolute; /* Position menu below hamburger */
+                top: 50px; /* Adjust as needed */
+                background-color: white;
+                width: 100%;
+            }
+            .hamburger {
+                display: block; /* Show hamburger icon on mobile */
+            }
+        }
+        .activity-container {
+            position: relative;
+        }
+        .activity {
+            display: none;
+            position: relative;
+        }
+        .activity.active {
+            display: block;
         }
         .destinations {
             display: grid;
@@ -202,8 +213,8 @@
             }
         
             function toggleMenu() {
-                const menu = document.getElementById("navMenu");
-                menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+            const menu = document.getElementById("navMenu");
+            menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
             }
         
             function openModal(src) {
@@ -218,6 +229,8 @@
             window.onload = function() {
                 closeModal();
             };
+            
+
         
             function showActivity(direction) {
                 const activities = document.querySelectorAll('.activity');
