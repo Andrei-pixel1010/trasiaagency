@@ -175,6 +175,9 @@
             <label for="email">Email</label>
             <input type="email" id="email" name="email" required>
 
+            <label for="phone">Numărul de telefon</label>
+            <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" title="Introduceti un numar de telefon valid (10 cifre)">
+
             <label for="start_date">Data de început</label>
             <input type="date" id="start_date" name="start_date" required>
 
@@ -218,9 +221,12 @@
             formData.set('start_date', formattedStartDate);
             formData.set('end_date', formattedEndDate);
 
-            // Send the data to the server or handle it as needed
-            console.log(Object.fromEntries(formData)); // For demonstration, logging to console
-            // You can use fetch or XMLHttpRequest to send the data to a server here
+            // Log the form data for demonstration
+            console.log(Object.fromEntries(formData));
+            // Here, you can use fetch or XMLHttpRequest to send the data to a server
+
+            // Redirect to thank you page after submission
+            window.location.href = 'Thankyou.html';
         });
 
         function formatDate(dateString) {
