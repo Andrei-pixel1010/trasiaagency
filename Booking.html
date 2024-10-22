@@ -3,177 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking Page</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+    <title>Trasia Agency - Booking</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             color: #333;
+            background-color: #f0f4f8;
             line-height: 1.6;
-            background: #f9f9f9;
         }
         header {
-            background: #926f34;
-            color: white;
+            background: rgba(114, 255, 229, 0.9);
+            color: #ffffff;
             padding: 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
-        nav a {
-            color: white;
+        header .logo {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        .menu-toggle {
+            background: transparent;
+            border: none;
+            color: #ffffff;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+        .menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            z-index: 1000;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .menu-overlay nav {
+            text-align: center;
+        }
+        .menu-overlay nav a {
+            display: block;
+            font-size: 2em;
+            margin: 10px 0;
+            padding: 10px;
+            background: #cef9e7;
+            border-radius: 10px;
+            color: #333;
             text-decoration: none;
-            margin: 0 15px;
-            transition: color 0.3s;
+            transition: background 0.3s;
         }
-        nav a:hover {
-            color: #ffcc00;
+        .menu-overlay nav a:hover {
+            background: #86e8fc;
         }
         .hero {
-            background: url(https://assets.bucketlistly.blog/sites/5adf778b6eabcc00190b75b1/content_entry5adf77af6eabcc00190b75b6/65b61ce396669b00025e9a6a/files/best-temples-in-bangkok-main-image-hd-op.webp) no-repeat center center/cover;
-            height: 40vh;
+            background: url('https://cdn.pixabay.com/photo/2017/09/02/15/20/thailand-2707555_1280.jpg') no-repeat center center/cover;
+            height: 400px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             text-align: center;
-            position: relative;
             padding: 20px;
         }
-        .hero::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-        }
         .hero h1 {
-            font-size: 2.5em;
-            z-index: 1;
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
         .section {
             padding: 40px 20px;
             text-align: center;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            margin: -20px 20px 20px 20px; /* Overlapping the margin to create spacing */
-        }
-        .form-group {
+            background-color: #fff;
             margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
             display: flex;
-            justify-content: center;
-            gap: 40px; /* Increased space between inputs */
+            flex-direction: column;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
         label {
-            font-weight: bold;
-            display: block;
-            margin-bottom: 10px;
-            font-size: 1.2em; /* Larger font for labels */
-            color: #926f34; /* Changed label color */
+            font-size: 1.1em;
+            margin: 10px 0 5px;
+            text-align: left;
         }
         input, select {
-            padding: 15px;
-            width: 100%; /* Make the fields take full width */
-            max-width: 450px; /* Increased max-width for better appearance */
-            border: 1px solid #ddd;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
             border-radius: 5px;
-            box-shadow: 0 1px 5px rgba(0,0,0,0.1);
-            transition: border 0.3s;
-            font-size: 1.1em; /* Larger font for inputs */
-            appearance: none; /* Remove default styling for select */
-        }
-        input:focus, select:focus {
-            border-color: #926f34;
-            outline: none;
+            font-size: 1em;
         }
         .cta-button {
-            background: #926f34;
-            color: white;
+            background-color: rgba(78, 252, 255, 0.9);
+            color: rgb(255, 255, 255);
             padding: 15px 30px;
             text-decoration: none;
             border-radius: 5px;
-            cursor: pointer;
+            font-size: 1.5em;
             transition: background 0.3s;
-            display: inline-block;
-            margin-top: 20px;
-            font-size: 1.2em; /* Larger font for button */
+            cursor: pointer;
+            border: none;
         }
         .cta-button:hover {
-            background: #7a5a27; /* Darker on hover */
+            background-color: #9eeece;
         }
         footer {
-            background: #333;
+            background: linear-gradient(to bottom, #cef9e7, #9eeece, #86e8fc);
             color: white;
             padding: 20px;
             text-align: center;
         }
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2em;
+                font-size: 2.5em;
             }
-            .form-group {
-                flex-direction: column; /* Stack inputs on smaller screens */
-                gap: 20px; /* Reduced space for stacking */
+            .cta-button {
+                font-size: 1.2em;
             }
             input, select {
-                width: 100%; /* Full width on smaller screens */
+                font-size: 0.9em;
             }
         }
     </style>
 </head>
+
 <body>
     <header>
         <div class="logo">Trasia Agency</div>
-        <nav>
-            <a href="Trasia1.html" class="cta-button">Home</a>
-            <a href="#">Destinations</a>
-            <a href="#">Services</a>
-            <a href="#">About Us</a>
-            <a href="#">Contact</a>
-        </nav>
+        <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
     </header>
-    
-    <div class="hero">
-        <h1>Book Your Dream Trip</h1>
+
+    <div class="menu-overlay" id="menuOverlay">
+        <button class="close-button" onclick="toggleMenu()">✖</button>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="booking.html">Rezerva acum</a>
+        </nav>
     </div>
-    
+
+    <div class="hero">
+        <h1>Rezervați Vacanța Dvs. de Vis!</h1>
+    </div>
+
     <div class="section">
-        <h2>Plan Your Journey</h2>
-        <form action="customer-details.html" method="post">
-            <div class="form-group">
-                <div>
-                    <label for="destination">Choose a Destination:</label>
-                    <select id="destination" name="destination" required>
-                        <option value="" disabled selected>Select your destination</option>
-                        <option value="Bangkok">Bangkok</option>
-                        <option value="Chiang Mai">Chiang Mai</option>
-                        <option value="Phuket">Phuket</option>
-                        <!-- Add more destinations as needed -->
-                    </select>
-                </div>
-                <div>
-                    <label for="start-date">Start Date:</label>
-                    <input type="date" id="start-date" name="start-date" required>
-                </div>
-                <div>
-                    <label for="end-date">End Date:</label>
-                    <input type="date" id="end-date" name="end-date" required>
-                </div>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="cta-button">Submit</button>
-            </div>
+        <h2>Rezerva acum</h2>
+        <form id="bookingForm">
+            <label for="name">Numele dvs.</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="start_date">Data de început</label>
+            <input type="date" id="start_date" name="start_date" required>
+
+            <label for="end_date">Data de sfârșit</label>
+            <input type="date" id="end_date" name="end_date" required>
+
+            <label for="destination">Destinație</label>
+            <select id="destination" name="destination" required>
+                <option value="">Alege o destinație</option>
+                <option value="bangkok">Bangkok</option>
+                <option value="chiangmai">Chiang Mai</option>
+                <option value="phuket">Phuket</option>
+            </select>
+
+            <label for="guests">Număr de oaspeți</label>
+            <input type="number" id="guests" name="guests" required>
+
+            <button type="submit" class="cta-button">Trimite Rezervarea</button>
         </form>
     </div>
-    
+
     <footer>
-        <p>Contact us: Trasiaagency@gmail.com | +40727300463</p>
-        <p>&copy; 2024 Travel Agency. All rights reserved.</p>
+        <p>© 2024 Trasia Agency. All rights reserved.</p>
+        <p>Contact: +40727300463</p>
     </footer>
+
+    <script>
+        document.getElementById('bookingForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get date values
+            const startDate = document.getElementById('start_date').value;
+            const endDate = document.getElementById('end_date').value;
+
+            // Convert date format from YYYY-MM-DD to DD MM YYYY
+            const formattedStartDate = formatDate(startDate);
+            const formattedEndDate = formatDate(endDate);
+
+            // Create a new form data object to submit
+            const formData = new FormData(this);
+            formData.set('start_date', formattedStartDate);
+            formData.set('end_date', formattedEndDate);
+
+            // Send the data to the server or handle it as needed
+            console.log(Object.fromEntries(formData)); // For demonstration, logging to console
+            // You can use fetch or XMLHttpRequest to send the data to a server here
+        });
+
+        function formatDate(dateString) {
+            const [year, month, day] = dateString.split('-');
+            return `${day} ${month} ${year}`; // Format as DD MM YYYY
+        }
+
+        function toggleMenu() {
+            const menuOverlay = document.getElementById('menuOverlay');
+            menuOverlay.style.display = menuOverlay.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
 </body>
 </html>
