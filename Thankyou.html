@@ -3,93 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+    <title>Trasia Agency - Thank You</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             color: #333;
-            background: #f9f9f9;
+            background-color: #f0f4f8;
+            line-height: 1.6;
         }
         header {
-            background: #926f34;
-            color: white;
+            background: rgba(114, 255, 229, 0.9);
+            color: #ffffff;
             padding: 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
-        nav a {
-            color: white;
+        header .logo {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        .menu-toggle {
+            background: transparent;
+            border: none;
+            color: #ffffff;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+        .menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            z-index: 1000;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .menu-overlay nav {
+            text-align: center;
+        }
+        .menu-overlay nav a {
+            display: block;
+            font-size: 2em;
+            margin: 10px 0;
+            padding: 10px;
+            background: #cef9e7;
+            border-radius: 10px;
+            color: #333;
             text-decoration: none;
-            margin: 0 15px;
-            transition: color 0.3s;
+            transition: background 0.3s;
         }
-        nav a:hover {
-            color: #ffcc00;
+        .menu-overlay nav a:hover {
+            background: #86e8fc;
         }
         .section {
             padding: 40px 20px;
             text-align: center;
-            background: white;
-            border-radius: 8px;
+            background-color: #fff;
+            margin: 20px auto;
+            border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            margin: 20px; /* Standard margin */
+            max-width: 600px;
         }
         h2 {
-            color: #926f34; /* Title color */
+            color: #4CAF50; /* A nice green color for headings */
         }
         p {
-            font-size: 1.2em; /* Larger font for message */
-            margin-top: 20px;
+            margin: 10px 0;
+            font-size: 1.1em;
         }
         .cta-button {
-            background: #926f34;
+            background-color: #4CAF50;
             color: white;
             padding: 15px 30px;
             text-decoration: none;
             border-radius: 5px;
-            cursor: pointer;
+            font-size: 1.2em;
             transition: background 0.3s;
+            cursor: pointer;
+            border: none;
             display: inline-block;
-            font-size: 1.2em; /* Larger font for button */
             margin-top: 20px;
         }
         .cta-button:hover {
-            background: #7a5a27; /* Darken the button on hover */
+            background-color: #45a049;
         }
         footer {
-            background: #333;
+            background: linear-gradient(to bottom, #cef9e7, #9eeece, #86e8fc);
             color: white;
             padding: 20px;
             text-align: center;
         }
     </style>
 </head>
+
 <body>
     <header>
         <div class="logo">Trasia Agency</div>
-        <nav>
-            <a href="Trasia1.html" class="cta-button">Home</a>
-            <a href="#">Destinations</a>
-            <a href="#">Services</a>
-            <a href="#">About Us</a>
-            <a href="#">Contact</a>
-        </nav>
+        <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
     </header>
-    
+
+    <div class="menu-overlay" id="menuOverlay">
+        <button class="close-button" onclick="toggleMenu()">✖</button>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="booking.html">Rezerva acum</a>
+        </nav>
+    </div>
+
     <div class="section">
-        <h2>Thank You!</h2>
-        <p>Thank you for using our services. You will be contacted soon by one of our agents.</p>
-        <p>If you have any questions, feel free to reach out to us.</p>
-        <a href="Trasia1.html" class="cta-button">Return to Home</a>
+        <h2>Mulțumim pentru Rezervare!</h2>
+        <p>Rezervarea dumneavoastră a fost efectuată cu succes.</p>
+        <p>Un agent vă va contacta în curând pentru a finaliza detaliile.</p>
+        <p><a href="index.html" class="cta-button">Înapoi la Home</a></p>
     </div>
 
     <footer>
-        <p>Contact us: Trasiaagency@gmail.com | +40727300463</p>
-        <p>&copy; 2024 Travel Agency. All rights reserved.</p>
+        <p>© 2024 Trasia Agency. All rights reserved.</p>
+        <p>Contact: +40727300463</p>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const menuOverlay = document.getElementById('menuOverlay');
+            menuOverlay.style.display = menuOverlay.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
 </body>
 </html>
