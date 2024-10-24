@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trasia Agency - Offers</title>
+    <style>
+        /* Reusing the existing styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f0f4f8;
+            line-height: 1.6;
+        }
+        header {
+            background: rgba(114, 255, 229, 0.8);
+            color: #ffffff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transition: background 0.3s;
+        }
+        .logo {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        .menu-toggle {
+            background: transparent;
+            border: none;
+            color: #ffffff;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+        .menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            z-index: 1000;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .menu-overlay nav {
+            text-align: center;
+        }
+        .menu-overlay nav a {
+            display: block;
+            font-size: 1.5em;
+            margin: 10px 0;
+            padding: 15px 30px;
+            background: #cef9e7;
+            border-radius: 30px;
+            color: #333;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .menu-overlay nav a:hover {
+            background: #86e8fc;
+            transform: scale(1.05);
+        }
+        .close-button {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2em;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .section {
+            padding: 40px 20px;
+            text-align: center;
+            background-color: #fff;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .offers-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .offer {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            width: 280px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .offer img {
+            border-radius: 10px;
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .offer h3 {
+            margin: 15px 0 5px;
+            color: #4CAF50;
+            font-size: 1.5em;
+        }
+        .offer p {
+            color: #666;
+            font-size: 1em;
+        }
+        .cta-button {
+            background-color: rgba(114, 255, 229, 0.8);
+            color: rgb(255, 255, 255);
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: background 0.3s;
+        }
+        .cta-button:hover {
+            background: linear-gradient(to bottom, #cef9e7, #9eeece, #86e8fc);
+        }
+        footer {
+            background: linear-gradient(to bottom, #cef9e7, #9eeece, #86e8fc);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .offer {
+                width: 100%;
+                max-width: 400px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Trasia Agency</div>
+        <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+    </header>
+    
+    <div class="menu-overlay" id="menuOverlay">
+        <button class="close-button" onclick="toggleMenu()">✖</button>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="booking.html">Rezerva acum</a>
+            <a href="offers.html">Oferte</a>
+        </nav>
+    </div>
+
+    <div class="section">
+        <h2>Oferte Speciale</h2>
+        <div class="offers-container">
+            <div class="offer">
+                <img src="https://cdn.pixabay.com/photo/2016/11/29/06/39/honeymoon-1869944_1280.jpg" alt="Honeymoon">
+                <h3>Vacanță de Nuntă</h3>
+                <p>Oferim pachete romantice în cele mai frumoase locații din Thailanda.</p>
+                <a href="honeymoon.html" class="cta-button">Detalii</a>
+            </div>
+            <div class="offer">
+                <img src="https://cdn.pixabay.com/photo/2016/10/16/22/00/hiking-1738296_1280.jpg" alt="Adventure Tour">
+                <h3>Tururi de Aventură</h3>
+                <p>Descoperă jungla thailandeză cu tururi de aventură ghidate.</p>
+                <a href="adventure.html" class="cta-button">Detalii</a>
+            </div>
+            <div class="offer">
+                <img src="https://cdn.pixabay.com/photo/2017/02/01/17/35/food-1968703_1280.jpg" alt="Culinary Tour">
+                <h3>Tururi Culinare</h3>
+                <p>Experimentează aromele autentice ale Thailandei cu tururi culinare.</p>
+                <a href="culinary.html" class="cta-button">Detalii</a>
+            </div>
+            <div class="offer">
+                <img src="https://cdn.pixabay.com/photo/2018/03/07/10/59/massage-3203193_1280.jpg" alt="Wellness Retreat">
+                <h3>Retreat-uri de Wellness</h3>
+                <p>Relaxează-te și reîncarcă-ți energia la retreat-uri de wellness.</p>
+                <a href="wellness.html" class="cta-button">Detalii</a>
+            </div>
+            <div class="offer">
+                <img src="https://cdn.pixabay.com/photo/2016/09/07/22/22/thailand-557028_1280.jpg" alt="Cultural Experience">
+                <h3>Experiențe Culturale</h3>
+                <p>Îmbogățește-ți cunoștințele cu activități culturale thailandeze.</p>
+                <a href="cultural.html" class="cta-button">Detalii</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Trasia Agency. All rights reserved.</p>
+        <p>Contact: +40727300463</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menuOverlay = document.getElementById('menuOverlay');
+            menuOverlay.style.display = menuOverlay.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
+</body>
+</html>
