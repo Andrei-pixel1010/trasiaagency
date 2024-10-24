@@ -168,7 +168,7 @@
 
     <div class="section">
         <h2>Rezerva acum</h2>
-        <form id="bookingForm">
+        <form id="bookingForm" action="https://forms.gle/WLQiPwZg8FqdZ15f6" method="POST">
             <label for="name">Numele dvs.</label>
             <input type="text" id="name" name="name" required>
 
@@ -205,35 +205,6 @@
     </footer>
 
     <script>
-        document.getElementById('bookingForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the default form submission
-
-            // Get date values
-            const startDate = document.getElementById('start_date').value;
-            const endDate = document.getElementById('end_date').value;
-
-            // Convert date format from YYYY-MM-DD to DD MM YYYY
-            const formattedStartDate = formatDate(startDate);
-            const formattedEndDate = formatDate(endDate);
-
-            // Create a new form data object to submit
-            const formData = new FormData(this);
-            formData.set('start_date', formattedStartDate);
-            formData.set('end_date', formattedEndDate);
-
-            // Log the form data for demonstration
-            console.log(Object.fromEntries(formData));
-            // Here, you can use fetch or XMLHttpRequest to send the data to a server
-
-            // Redirect to thank you page after submission
-            window.location.href = 'Thankyou.html';
-        });
-
-        function formatDate(dateString) {
-            const [year, month, day] = dateString.split('-');
-            return `${day} ${month} ${year}`; // Format as DD MM YYYY
-        }
-
         function toggleMenu() {
             const menuOverlay = document.getElementById('menuOverlay');
             menuOverlay.style.display = menuOverlay.style.display === 'flex' ? 'none' : 'flex';
