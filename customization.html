@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trasia Agency - Explore Thailand</title>
+    <title>Trasia Agency - Customize Your Honeymoon</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -35,6 +35,42 @@
             color: #ffffff;
             font-size: 1.5em;
             cursor: pointer;
+        }
+        .menu-overlay {
+            display: none; /* Initially hidden */
+            flex-direction: column;
+            background: rgba(0, 0, 0, 0.9);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            transition: opacity 0.3s ease;
+            opacity: 0; /* Start transparent */
+        }
+        .menu-overlay.show {
+            display: flex;
+            opacity: 1; /* Fade in */
+        }
+        .menu-overlay nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .menu-overlay nav a {
+            color: #ffffff;
+            font-size: 1.2em;
+            margin: 15px 0;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .menu-overlay nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
         }
         .hero {
             background: url('https://cdn.pixabay.com/photo/2017/09/02/15/20/thailand-2707555_1280.jpg') no-repeat center center/cover;
@@ -75,133 +111,49 @@
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-        .destinations {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-        }
-        .destination {
-            background-color: #f9f9f9;
-            border-radius: 10px;
-            padding: 15px;
-            width: 90%;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .destination img {
-            border-radius: 10px;
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-        }
-        .destination h3 {
-            margin: 10px 0 5px;
-            color: #4CAF50;
-            font-size: 1.2em;
-        }
-        .destination p {
-            color: #666;
-            font-size: 0.9em;
-        }
         footer {
             background: linear-gradient(to bottom, #cef9e7, #9eeece);
             color: white;
             padding: 10px;
             text-align: center;
         }
-        .testimonial-container, .gallery-container {
-            max-width: 90%;
-            margin: 10px auto;
-            background-color: #fff;
-            border-radius: 10px;
-            padding: 15px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-        .testimonial, .gallery {
-            display: none;
-            text-align: center;
-        }
-        .testimonial.active, .gallery.active {
-            display: block;
-        }
-        .prev, .next {
-            background: transparent;
-            border: none;
-            font-size: 1.5em;
-            cursor: pointer;
-            color: #4CAF50;
-            padding: 10px;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-        .prev {
-            left: 10px;
-        }
-        .next {
-            right: 10px;
-        }
-        .close-button {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 1.5em;
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: #ffffff;
-        }
-        .menu-overlay {
-            display: none; /* Initially hidden */
+        form {
+            display: flex;
             flex-direction: column;
-            background: rgba(0, 0, 0, 0.9);
-            position: fixed;
-            top: 0;
-            left: 0;
+            align-items: center;
+            gap: 15px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        input, select {
             width: 100%;
-            height: 100%;
-            align-items: center;
-            justify-content: center;
-            z-index: 999;
-            transition: opacity 0.3s ease;
-            opacity: 0; /* Start transparent */
-        }
-        .menu-overlay.show {
-            display: flex;
-            opacity: 1; /* Fade in */
-        }
-        .menu-overlay nav {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .menu-overlay nav a {
-            color: #ffffff;
-            font-size: 1.2em; /* Made smaller */
-            margin: 15px 0;
-            text-decoration: none;
-            padding: 8px 12px; /* Made smaller */
+            padding: 10px;
+            border: 1px solid #ccc;
             border-radius: 5px;
-            transition: background 0.3s;
         }
-        .menu-overlay nav a:hover {
-            background: rgba(255, 255, 255, 0.2);
+        .phone-container {
+            display: flex;
+            width: 100%;
+            gap: 10px;
         }
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2em;
-            }
-            .cta-button {
-                font-size: 0.9em;
-            }
-            .destination h3 {
-                font-size: 1.1em;
-            }
-            .destination p {
-                font-size: 0.8em;
-            }
+        .phone-container select {
+            flex: 0 0 30%; /* Fixed width for the prefix */
+        }
+        .currency-container {
+            display: flex;
+            width: 100%;
+            gap: 10px;
+        }
+        .currency-container select {
+            flex: 0 0 30%; /* Fixed width for the currency */
+        }
+        textarea {
+            width: 100%;
+            height: 100px; /* Set a fixed height */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none; /* Prevent resizing */
         }
     </style>
 </head>
@@ -217,115 +169,79 @@
             <a href="index.html">Home</a>
             <a href="destinations.html">Destinations</a>
             <a href="about.html">About Us</a>
-            <a href="Services.html">Services</a>
+            <a href="services.html">Services</a>
             <a href="contact.html">Contact</a>
-            <a href="Booking.html">Rezerva acum</a>
-            <a href="Offers">Oferte</a>
+            <a href="booking.html">Rezerva acum</a>
+            <a href="offers.html">Oferte</a>
         </nav>
     </div>
 
     <div class="hero">
-        <h1>Your Dream Honeymoon Awaits!</h1>
-        <a class="cta-button" href="#offers">Explore Offers</a>
+        <h1>Customize Your Honeymoon</h1>
+        <a class="cta-button" href="#form">Start Customization</a>
     </div>
 
     <main>
-        <section id="reasons" class="section">
-            <h2>Why Honeymoon in Thailand?</h2>
-            <div class="destinations">
-                <div class="destination">
-                    <h3>Stunning Beaches</h3>
-                    <p>Beautiful sunsets and enchanting islands.</p>
+        <section id="form" class="section">
+            <h2>Tell Us Your Preferences</h2>
+            <form id="bookingForm" action="https://script.google.com/macros/s/AKfycbz-DyytZC_2Sb5KeT2V0IgBcdII8cHu8H50qcfiEKAcqC4ZKuRff09rSsJ5eEOPXaBvHQ/exec" method="POST">
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <div class="phone-container">
+                    <select id="countryCode" name="countryCode" required>
+                        <option value="+1">+1 (USA)</option>
+                        <option value="+44">+44 (UK)</option>
+                        <option value="+40">+40 (Romania)</option>
+                        <option value="+49">+49 (Germany)</option>
+                        <option value="+33">+33 (France)</option>
+                        <option value="+39">+39 (Italy)</option>
+                        <option value="+34">+34 (Spain)</option>
+                        <option value="+61">+61 (Australia)</option>
+                        <option value="+81">+81 (Japan)</option>
+                        <option value="+86">+86 (China)</option>
+                        <option value="+91">+91 (India)</option>
+                        <option value="+27">+27 (South Africa)</option>
+                        <option value="+55">+55 (Brazil)</option>
+                        <option value="+61">+61 (New Zealand)</option>
+                        <option value="+41">+41 (Switzerland)</option>
+                        <option value="+351">+351 (Portugal)</option>
+                        <option value="+46">+46 (Sweden)</option>
+                        <option value="+358">+358 (Finland)</option>
+                        <option value="+45">+45 (Denmark)</option>
+                        <option value="+47">+47 (Norway)</option>
+                        <option value="+353">+353 (Ireland)</option>
+                        <option value="+36">+36 (Hungary)</option>
+                        <option value="+420">+420 (Czech Republic)</option>
+                        <option value="+421">+421 (Slovakia)</option>
+                        <option value="+385">+385 (Croatia)</option>
+                        <option value="+381">+381 (Serbia)</option>
+                        <option value="+32">+32 (Belgium)</option>
+                        <option value="+31">+31 (Netherlands)</option>
+                        <option value="+372">+372 (Estonia)</option>
+                        <option value="+370">+370 (Lithuania)</option>
+                        <option value="+371">+371 (Latvia)</option>
+                        <option value="+30">+30 (Greece)</option>
+                        <option value="+994">+994 (Azerbaijan)</option>
+                        <option value="+7">+7 (Russia)</option>
+                        <option value="+996">+996 (Kyrgyzstan)</option>
+                        <option value="+998">+998 (Uzbekistan)</option>
+                        <option value="+63">+63 (Philippines)</option>
+                        <option value="+84">+84 (Vietnam)</option>
+                        <option value="+972">+972 (Israel)</option>
+                    </select>
+                    <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
                 </div>
-                <div class="destination">
-                    <h3>Cultural Richness</h3>
-                    <p>Rich traditions and ancient temples.</p>
+                <div class="currency-container">
+                    <input type="number" id="budget" name="budget" placeholder="Enter your budget" required>
+                    <select id="currency" name="currency" required>
+                        <option value="EUR">EUR</option>
+                        <option value="USD">USD</option>
+                        <option value="RON">RON</option>
+                    </select>
                 </div>
-                <div class="destination">
-                    <h3>Exquisite Cuisine</h3>
-                    <p>Indulge in vibrant Thai delicacies.</p>
-                </div>
-                <div class="destination">
-                    <h3>Luxurious Accommodations</h3>
-                    <p>Romantic resorts tailored for relaxation.</p>
-                </div>
-                <div class="destination">
-                    <h3>Unique Experiences</h3>
-                    <p>Cooking classes and elephant sanctuaries.</p>
-                </div>
-                <div class="destination">
-                    <h3>Vibrant Nightlife</h3>
-                    <p>Lively bars and clubs in Bangkok.</p>
-                </div>
-                <div class="destination">
-                    <h3>Affordability</h3>
-                    <p>Luxury at a fraction of the cost.</p>
-                </div>
-            </div>
+                <textarea id="description" name="description" placeholder="Describe what you want from the holiday" required></textarea>
+                <button type="submit" class="cta-button">Submit Preferences</button>
+            </form>
         </section>
-
-        <section id="offers" class="section">
-            <h2>Exclusive Offers</h2>
-            <div class="destinations">
-                <div class="destination">
-                    <img src="https://cdn.pixabay.com/photo/2016/04/26/11/50/thailand-1356685_1280.jpg" alt="Beach Package">
-                    <h3>Beach Getaway</h3>
-                    <p>5 nights in Koh Samui + Spa Package</p>
-                </div>
-                <div class="destination">
-                    <img src="https://cdn.pixabay.com/photo/2016/04/26/11/50/thailand-1356685_1280.jpg" alt="Cultural Package">
-                    <h3>Cultural Experience</h3>
-                    <p>7 days in Chiang Mai + Local Tours</p>
-                </div>
-                <div class="destination">
-                    <img src="https://cdn.pixabay.com/photo/2016/04/26/11/50/thailand-1356685_1280.jpg" alt="Adventure Package">
-                    <h3>Adventure Package</h3>
-                    <p>Island Hopping Tour + Activities</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="testimonials" class="testimonial-container">
-            <h2>What Our Customers Say</h2>
-            <div class="testimonial active">
-                <p>"The honeymoon package was perfect! We loved every moment."</p>
-                <cite>- Emily & John</cite>
-            </div>
-            <div class="testimonial">
-                <p>"An unforgettable experience! The trip was beautifully organized."</p>
-                <cite>- Sarah & Tom</cite>
-            </div>
-            <div class="testimonial">
-                <p>"Absolutely magical! We can't wait to go back."</p>
-                <cite>- David & Mia</cite>
-            </div>
-            <button class="prev" onclick="showTestimonial(-1)">❮</button>
-            <button class="next" onclick="showTestimonial(1)">❯</button>
-        </section>
-
-        <section id="gallery" class="gallery-container">
-            <h2>Gallery</h2>
-            <div class="gallery active">
-                <img src="https://cdn.pixabay.com/photo/2015/01/05/15/51/thailand-588323_1280.jpg" alt="Gallery Image 1">
-                <h3>Beautiful Sunset</h3>
-            </div>
-            <div class="gallery">
-                <img src="https://cdn.pixabay.com/photo/2016/04/26/11/50/thailand-1356685_1280.jpg" alt="Gallery Image 2">
-                <h3>Serene Beach</h3>
-            </div>
-            <div class="gallery">
-                <img src="https://cdn.pixabay.com/photo/2015/01/05/15/51/thailand-588323_1280.jpg" alt="Gallery Image 3">
-                <h3>Vibrant Market</h3>
-            </div>
-            <button class="prev" onclick="showGallery(-1)">❮</button>
-            <button class="next" onclick="showGallery(1)">❯</button>
-        </section>
-
-        <section id="customization" class="section">
-            <h4>Customize Your Honeymoon</h4>
-            <p>Tell us what you're dreaming of! We can tailor your package to make it even more special.</p>
-            <a href="customization.html" class="cta-button">Start Customization</a> <!-- Change "customization.html" to your desired page -->
-        </section>        
     </main>
 
     <footer>
@@ -334,10 +250,6 @@
     </footer>
 
     <script>
-        let currentTestimonialIndex = 0;
-        const testimonials = document.querySelectorAll('.testimonial');
-        const galleries = document.querySelectorAll('.gallery');
-
         function toggleMenu() {
             const menuOverlay = document.getElementById('menuOverlay');
             menuOverlay.classList.toggle('show');
@@ -347,19 +259,7 @@
             document.querySelector('.hero').style.opacity = 1;
         }
 
-        function showTestimonial(n) {
-            testimonials[currentTestimonialIndex].classList.remove('active');
-            currentTestimonialIndex = (currentTestimonialIndex + n + testimonials.length) % testimonials.length;
-            testimonials[currentTestimonialIndex].classList.add('active');
-        }
-
-        let currentGalleryIndex = 0;
-
-        function showGallery(n) {
-            galleries[currentGalleryIndex].classList.remove('active');
-            currentGalleryIndex = (currentGalleryIndex + n + galleries.length) % galleries.length;
-            galleries[currentGalleryIndex].classList.add('active');
-        }
+      
     </script>
 </body>
 </html>
