@@ -101,6 +101,10 @@
             margin-top: 20px;
         }
         .offer {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Asigură o distribuire uniformă a spațiului */
+            height: 400px; /* Permite utilizarea întregii înălțimi disponibile */
             background-color: #f9f9f9;
             border-radius: 10px;
             padding: 20px;
@@ -108,20 +112,24 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
         }
+
         .offer img {
             border-radius: 10px;
             width: 100%;
-            height: 180px;
+            height: 180px; /* Asigură-te că imaginile au aceeași înălțime */
             object-fit: cover;
         }
+
         .offer h3 {
             margin: 15px 0 5px;
             color: #4CAF50;
             font-size: 1.5em;
+            flex-grow: 1;
         }
         .offer p {
             color: #666;
             font-size: 1em;
+            margin-bottom: 15px ;
         }
         .cta-button {
             background-color: rgba(114, 255, 229, 0.8);
@@ -179,33 +187,51 @@
         <div class="offers-container">
             <div class="offer">
                 <img src="https://cdn.pixabay.com/photo/2016/11/29/06/39/honeymoon-1869944_1280.jpg" alt="Honeymoon">
-                <h3>Vacanță de Nuntă</h3>
+                <h3>Luna de miere</h3>
                 <p>Oferim pachete romantice în cele mai frumoase locații din Thailanda.</p>
                 <a href="honeymoon.html" class="cta-button">Detalii</a>
             </div>
             <div class="offer">
                 <img src="https://cdn.pixabay.com/photo/2016/10/16/22/00/hiking-1738296_1280.jpg" alt="Adventure Tour">
-                <h3>Bangkok + Phuket + Phi Phi Islands (11 days) </h3>
-                <p>Descoperă jungla thailandeză cu tururi de aventură ghidate.</p>
-                <a href="adventure.html" class="cta-button">Detalii</a>
+                <h3>Bangkok + Phuket + Phi Phi Islands (11 zile) </h3>
+                <p>Descoperă cultura si natura Thailandezeaca</p>
+                <a href="Vacanta1.html" class="cta-button">Detalii</a>
             </div>
             <div class="offer">
                 <img src="https://cdn.pixabay.com/photo/2017/02/01/17/35/food-1968703_1280.jpg" alt="Culinary Tour">
-                <h3>Tururi Culinare</h3>
-                <p>Experimentează aromele autentice ale Thailandei cu tururi culinare.</p>
-                <a href="culinary.html" class="cta-button">Detalii</a>
+                <h3>Bangkok + Chiang Mai + Chiang Rai (10 zile)</h3>
+                <p>Explorati Bangkok-ul vibrant, templele antice din Chiang Mai si peisajele din Chiang Rai</p>
+                <a href="Vacanta2.html" class="cta-button">Detalii</a>
             </div>
             <div class="offer">
                 <img src="https://cdn.pixabay.com/photo/2018/03/07/10/59/massage-3203193_1280.jpg" alt="Wellness Retreat">
-                <h3>Retreat-uri de Wellness</h3>
-                <p>Relaxează-te și reîncarcă-ți energia la retreat-uri de wellness.</p>
-                <a href="wellness.html" class="cta-button">Detalii</a>
+                <h3>Phuket + Island Hopping (8 zile)</h3>
+                <p>Relaxează-te și reîncarcă-ți energia pe cele mai frumoase plaje</p>
+                <a href="Vacanta3.html" class="cta-button">Detalii</a>
             </div>
             <div class="offer">
                 <img src="https://cdn.pixabay.com/photo/2016/09/07/22/22/thailand-557028_1280.jpg" alt="Cultural Experience">
-                <h3>Experiențe Culturale</h3>
-                <p>Îmbogățește-ți cunoștințele cu activități culturale thailandeze.</p>
-                <a href="cultural.html" class="cta-button">Detalii</a>
+                <h3>Bangkok + Chiang Mai + Krabi (11 zile)</h3>
+                <p>Descopera Bangkok-ul plin de viata, cultura din Chiang Mai, si plajele din Krabi</p>
+                <a href="Vacanta4.html" class="cta-button">Detalii</a>
+            </div>
+            <div class="offer">
+                <img src="https://cdn.pixabay.com/photo/2016/09/07/22/22/thailand-557028_1280.jpg" alt="Cultural Experience">
+                <h3>Bangkok + Pattaya + Phuket + Phi Phi Islands (15 zile)</h3>
+                <p>Explorati agitatia Bagkokului, viata de noapte din Pattaya, plajele spectaculoase din Phuket si insulele Phi Phi</p>
+                <a href="Vacanta5.html" class="cta-button">Detalii</a>
+            </div>
+            <div class="offer">
+                <img src="https://cdn.pixabay.com/photo/2016/09/07/22/22/thailand-557028_1280.jpg" alt="Cultural Experience">
+                <h3>Krabi + Koh Samui + Chiang Mai (12 zile) </h3>
+                <p>Descopera peisajele uluitoare din Krabi, relaxeaza-te in Koh Samui, si experimenteaza traditia in Chiang Mai</p>
+                <a href="Vacanta6.html" class="cta-button">Detalii</a>
+            </div>
+            <div class="offer">
+                <img src="https://cdn.pixabay.com/photo/2016/09/07/22/22/thailand-557028_1280.jpg" alt="Cultural Experience">
+                <h3>Personalizeaza propia ta vacanta</h3>
+                <p>Spune-ne ce iti doresti si noi facem sa se intample!</p>
+                <a href="customization.html" class="cta-button">Creaza-ti vacanta</a>
             </div>
         </div>
     </div>
