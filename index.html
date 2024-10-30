@@ -124,22 +124,43 @@
             justify-content: center;
             gap: 20px;
         }
-        .destination, .offer {
+        .destination{
             background-color: #f9f9f9;
             border-radius: 10px;
             padding: 20px;
             width: 300px;
+            height : 390px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
             position: relative;
             overflow: hidden;
         }
-        .destination img, .offer img {
+        .offer {
+            display: flex;
+            flex-direction: column; /* Stack children vertically */
+            justify-content: space-between; /* Space between items */
+            height: 480px; /* Set a fixed height */
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px; /* Fixed width for consistency */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .destination img {
             border-radius: 10px;
             width: 100%;
             height: 200px;
             object-fit: cover;
         }
+        .offer img {
+            height: 200px; /* Fixed height for images */
+            object-fit: cover; /* Maintain aspect ratio */
+            border-radius: 10px;
+            margin-bottom: 15px; /* Space between image and text */
+        }
+
         .destination h3, .offer h3  {
             margin: 15px 0 5px;
             color: #4CAF50;
@@ -153,7 +174,16 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
        
-        
+        .detalii-button {
+            margin-top: auto; /* Push button to the bottom */
+            background-color: rgba(114, 255, 229, 0.8);
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            transition: background 0.3s;
+        }
 
         .testimonial-container, .activity-container, .gallery-container {
             max-width: 600px;
@@ -300,25 +330,25 @@
                 <img src="https://cdn.pixabay.com/photo/2013/11/19/09/35/glasses-213156_1280.jpg" alt="Honeymoon">
                 <h3>Luna de miere</h3>
                 <p>Oferim pachete romantice în cele mai frumoase locații din Thailanda.</p>
-                <a href="honeymoon.html" class="cta-button">Detalii</a>
+                <a href="honeymoon.html" class="detalii-button">Detalii</a>
             </div>
             <div class="offer">
                 <img src="https://cdn.pixabay.com/photo/2017/07/25/14/48/phi-phi-islands-2538412_1280.jpg" alt="Adventure Tour">
                 <h3>Bangkok + Phuket + Phi Phi Islands (11 zile) </h3>
                 <p>Descoperă cultura si natura Thailandezeaca</p>
-                <a href="Vacanta1.html" class="cta-button">Detalii</a>
+                <a href="Vacanta1.html" class="detalii-button">Detalii</a>
             </div>
             <div class="offer">
                 <img src="https://cdn.pixabay.com/photo/2016/09/18/23/48/chiang-mai-1679325_1280.jpg" alt="Culinary Tour">
                 <h3>Bangkok + Chiang Mai + Chiang Rai (10 zile)</h3>
                 <p>Explorati Bangkok-ul vibrant, templele antice din Chiang Mai si peisajele din Chiang Rai</p>
-                <a href="Vacanta2.html" class="cta-button">Detalii</a>
+                <a href="Vacanta2.html" class="detalii-button">Detalii</a>
             </div>
             <div class="offer">
                 <img src="https://cdn.pixabay.com/photo/2016/03/30/02/21/idea-1289876_1280.jpg" alt="Wellness Retreat">
                 <h3>Vezi alte oferte oferite de noi!</h3>
                 <p>Exploreaza toate ofertele, sau creaza-ti propia experienta.</p>
-                <a href="offers.html" class="cta-button">Detalii</a>
+                <a href="offers.html" class="detalii-button">Detalii</a>
             </div>
         </div>
     </div>
@@ -386,7 +416,7 @@
             </div>
             <div class="testimonial">
                 <p>
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxc_NV8Pa1g1cOLzX378UcB5sGqO3gUaOOzQ&s" alt="Denis" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;"> 
+                    <img src="https://i.imgur.com/8hjiNS2.jpeg" alt="Denis" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 10px;"> 
                     "Unforgettable experiences!" 
                     <br>- Denisa A.
                 </p>
