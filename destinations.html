@@ -10,12 +10,12 @@
             margin: 0;
             padding: 0;
             color: #333;
-            background-color: #f0f4f8;
+            background-color: #e0e0e0;
             line-height: 1.6;
         }
         header {
-            background: rgba(114, 255, 229, 0.8);
-            color: #ffffff;
+            background: rgba(17, 100, 102, 0.8);
+            color: #d9b08c;
             padding: 20px;
             display: flex;
             justify-content: space-between;
@@ -32,42 +32,45 @@
         .menu-toggle {
             background: transparent;
             border: none;
-            color: #ffffff;
+            color: #d9b08c;
             font-size: 1.5em;
             cursor: pointer;
         }
         .menu-overlay {
-            display: none;
+            display: none; /* Initially hidden */
+            flex-direction: column;
+            background: rgba(179, 201, 201, 0.9);
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(255, 255, 255, 0.95);
-            z-index: 1000;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
+            z-index: 999;
+            transition: opacity 0.3s ease;
+            opacity: 0; /* Start transparent */
         }
         .menu-overlay.show {
             display: flex;
+            opacity: 1; /* Fade in */
         }
         .menu-overlay nav {
-            text-align: center;
+            display: flex;
+            flex-direction: column ;
+            align-items: center ;
         }
         .menu-overlay nav a {
-            display: block;
-            font-size: 1.5em;
+            color: #116466;
+            font-size: 1.2em; /* Made smaller */
             margin: 10px 0;
-            padding: 15px 30px;
-            background: #cef9e7;
-            border-radius: 30px;
-            color: #333;
             text-decoration: none;
+            padding: 8px 12px; /* Made smaller */
+            border-radius: 5px;
             transition: background 0.3s;
         }
         .menu-overlay nav a:hover {
-            background: #86e8fc;
+            background: rgba(179, 201, 201, 0.2);
         }
         .close-button {
             position: absolute;
@@ -79,7 +82,7 @@
             cursor: pointer;
         }
         .hero {
-            background: url('https://cdn.pixabay.com/photo/2017/09/02/15/20/thailand-2707555_1280.jpg') no-repeat center center/cover;
+            background: url('https://cdn.pixabay.com/photo/2016/11/02/16/02/natural-1792047_1280.jpg') no-repeat center center/cover;
             height: 500px;
             display: flex;
             flex-direction: column;
@@ -93,18 +96,22 @@
             text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
         }
         .cta-button {
-            background-color: rgba(114, 255, 229, 0.8);
-            color: #ffffff;
+            background-color: rgba(217,176,140, 0.8);
+            color: rgb(255, 255, 255);
             padding: 15px 30px;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 10px;
             font-size: 1.5em;
+            transition: background 0.3s;
             margin-top: 20px;
+        }
+        .cta-button:hover {
+            background: rgba(217,176,140, 0.8);
         }
         .section {
             padding: 40px 20px;
             text-align: center;
-            background-color: #fff;
+            background-color: #b3c9c9;
             margin: 20px 0;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -116,7 +123,7 @@
             gap: 20px;
         }
         .destination {
-            background-color: #f9f9f9;
+            background-color: #e0e0e0;
             border-radius: 10px;
             padding: 20px;
             width: 300px;
@@ -131,7 +138,7 @@
         }
         .destination h3 {
             margin: 15px 0 5px;
-            color: #4CAF50;
+            color: #116466;
             font-size: 1.5em;
         }
         .destination p {
@@ -142,8 +149,8 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
         footer {
-            background: linear-gradient(to bottom, #cef9e7, #9eeece, #86e8fc);
-            color: white;
+            background:  rgba(17,100,102 , 0.8);
+            color:#d9b08c;
             padding: 20px;
             text-align: center;
         }
@@ -289,7 +296,6 @@
     
     <footer>
         <p>© 2024 Trasia Agency. All rights reserved.</p>
-        <p>Contact: +40727300463</p>
         <div class="social-media">
             <a href="https://www.facebook.com/profile.php?id=61566412341547" target="_blank" class="social-icon">
                 <img src="https://cdn.icon-icons.com/icons2/1/PNG/256/social_facebook_fb_35.png" alt="Facebook">
