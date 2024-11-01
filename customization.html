@@ -5,41 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trasia Agency - Customize Your Honeymoon</title>
     <style>
-        body {
+         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            color: #333;
-            background-color: #f0f4f8;
+            color: #2c3531;
+            background-color: #c6c6c6;
             line-height: 1.6;
         }
         header {
-            background: rgba(114, 255, 229, 0.8);
-            color: #ffffff;
-            padding: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+             font-family: 'iBrand', sans-serif;/* Changed to Montserrat */
+             background: rgba(17, 100, 102, 0.8);
+             color: #d9b08c;
+             padding: 20px;
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+             position: sticky;
+             top: 0;
+             z-index: 1000;
+             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+             transition: background 0.3s;
         }
+
         header .logo {
-            font-size: 1.5em;
+            font-size: 2em;
             font-weight: bold;
         }
         .menu-toggle {
             background: transparent;
             border: none;
-            color: #ffffff;
+            color: #d9b08c;
             font-size: 1.5em;
             cursor: pointer;
         }
         .menu-overlay {
             display: none; /* Initially hidden */
             flex-direction: column;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(179, 201, 201, 0.9);
             position: fixed;
             top: 0;
             left: 0;
@@ -57,20 +60,29 @@
         }
         .menu-overlay nav {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            flex-direction: column ;
+            align-items: center ;
         }
         .menu-overlay nav a {
-            color: #ffffff;
-            font-size: 1.2em;
-            margin: 15px 0;
+            color: #116466;
+            font-size: 1.2em; /* Made smaller */
+            margin: 10px 0;
             text-decoration: none;
-            padding: 8px 12px;
+            padding: 8px 12px; /* Made smaller */
             border-radius: 5px;
             transition: background 0.3s;
         }
         .menu-overlay nav a:hover {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(179, 201, 201, 0.2);
+        }
+        .close-button {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2em;
+            background: none;
+            border: none;
+            cursor: pointer;
         }
         .hero {
             background: url('https://cdn.pixabay.com/photo/2017/09/02/15/20/thailand-2707555_1280.jpg') no-repeat center center/cover;
@@ -91,30 +103,30 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
         .cta-button {
-            background-color: rgba(114, 255, 229, 0.8);
+            background-color: rgba(217,176,140, 0.8);
             color: rgb(255, 255, 255);
-            padding: 10px 20px;
+            padding: 15px 30px;
             text-decoration: none;
-            border-radius: 5px;
-            font-size: 1em;
+            border-radius: 10px;
+            font-size: 1.5em;
             transition: background 0.3s;
-            margin-top: 10px;
+            margin-top: 20px;
         }
         .cta-button:hover {
-            background: linear-gradient(to bottom, #cef9e7, #9eeece);
+            background:  rgba(250, 204, 164, 0.8);
         }
         .section {
             padding: 20px;
             text-align: center;
-            background-color: #fff;
+            background-color: #b3c9c9;
             margin: 10px 0;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
         footer {
-            background: linear-gradient(to bottom, #cef9e7, #9eeece);
-            color: white;
-            padding: 10px;
+            background:  rgba(17,100,102 , 0.8);
+            color:#d9b08c;
+            padding: 20px;
             text-align: center;
         }
         form {
@@ -128,12 +140,12 @@
         input, select {
             width: 100%;
             padding: 10px;
-            border: 1px solid #ccc;
+            border: 1px solid #e0e0e0;
             border-radius: 5px;
         }
         .phone-container {
             display: flex;
-            width: 100%;
+            width: 105%;
             gap: 10px;
         }
         .phone-container select {
@@ -141,7 +153,7 @@
         }
         .currency-container {
             display: flex;
-            width: 100%;
+            width: 105%;
             gap: 10px;
         }
         .currency-container select {
@@ -151,9 +163,21 @@
             width: 100%;
             height: 100px; /* Set a fixed height */
             padding: 10px;
-            border: 1px solid #ccc;
+            border: 1px solid #e0e0e0;
             border-radius: 5px;
             resize: none; /* Prevent resizing */
+        }
+        .social-media {
+            margin-top: 10px;
+        }
+
+        .social-icon {
+            margin: 0 10px;
+        }
+
+        .social-icon img {
+            width: 30px; /* Adjust icon size */
+            height: 30px; /* Adjust icon size */
         }
     </style>
 </head>
@@ -164,7 +188,6 @@
         <button class="menu-toggle" onclick="toggleMenu()">☰</button>
     </header>
     <div class="menu-overlay" id="menuOverlay">
-        <button class="close-button" onclick="toggleMenu()">✖</button>
         <nav>
             <a href="index.html">Home</a>
             <a href="destinations.html">Destinations</a>
@@ -238,6 +261,8 @@
                         <option value="RON">RON</option>
                     </select>
                 </div>
+                <input type="number" id="guests" name="guests" placeholder="Numar de oaspeti" required>
+
                 <textarea id="description" name="description" placeholder="Describe what you want from the holiday" required></textarea>
                 <button type="submit" class="cta-button">Submit Preferences</button>
             </form>
@@ -246,7 +271,17 @@
 
     <footer>
         <p>© 2024 Trasia Agency. All rights reserved.</p>
-        <p>Contact: +40727300463</p>
+        <div class="social-media">
+            <a href="https://www.facebook.com/profile.php?id=61566412341547" target="_blank" class="social-icon">
+                <img src="https://cdn.icon-icons.com/icons2/1/PNG/256/social_facebook_fb_35.png" alt="Facebook">
+            </a>
+            <a href="https://wa.me/+40771410487" target="_blank" class="social-icon">
+                <img src="https://cdn.icon-icons.com/icons2/622/PNG/512/whatsapp-logo_icon-icons.com_57054.png" alt="WhatsApp">
+            </a>
+            <a href="https://www.instagram.com/trasia.agency/" target="_blank" class="social-icon">
+                <img src="https://cdn.icon-icons.com/icons2/2066/PNG/512/instagram_icon_125245.png" alt="Instagram">
+            </a>
+        </div>
     </footer>
 
     <script>
