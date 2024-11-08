@@ -1,3 +1,4 @@
+
 /* Global Styles */
 body {
     font-family: Arial, sans-serif;
@@ -91,11 +92,18 @@ nav a:hover {
     }
 }
 
-.hidden {
-    display: none; /* Class to hide menu */
-}
 .hero.Bangkok {
-    background: url(https://assets.anantara.com/image/upload/q_auto,f_auto/media/minor/anantara/images/brandpage/destinations/asia/thailand-bangkok.jpg) no-repeat center center/cover;
+    background: url(https://cdn.pixabay.com/photo/2017/03/27/13/25/city-2178705_1280.jpg) no-repeat center center/cover;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+.hero.ChiangRai {
+    background: url(https://images.pexels.com/photos/14094477/pexels-photo-14094477.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2) no-repeat center center/cover;
     height: 50vh;
     display: flex;
     align-items: center;
@@ -116,6 +124,16 @@ nav a:hover {
 }
 .hero.Doiinthanon {
     background: url(https://static.independent.co.uk/2024/02/09/16/newFile.jpg) no-repeat center center/cover;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+.hero.Phangngabay {
+    background: url(https://images.unsplash.com/photo-1682517165112-193c75b55ee4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBoYW5nJTIwbmdhJTIwYmF5fGVufDB8fDB8fHww) no-repeat center center/cover;
     height: 50vh;
     display: flex;
     align-items: center;
