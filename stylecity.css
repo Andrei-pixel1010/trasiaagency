@@ -27,14 +27,12 @@ header {
      font-size: 2em;
      font-weight: bold;
  }
-.menu-toggle {
+ .menu-toggle {
     background: transparent;
     border: none;
-    color: rgb(0, 0, 0);
-    font-size: 3.0em;
+    color: #d9b08c;
+    font-size: 1.5em;
     cursor: pointer;
-    margin: 10px 0; /* Center the button with vertical margin */
-    align-self: flex-start; /* Align to the left */
 }
 .cta-button {
     background: linear-gradient(to bottom, #cef9e7, #9eeece, #86e8fc);
@@ -64,31 +62,23 @@ nav a:hover {
 }
 /* Media Queries for Hamburger Menu */
 @media (max-width: 768px) {
-    nav {
-        display: none; /* Hide nav by default */
-        flex-direction: column; /* Stack items vertically */
-        position: absolute;
-        background-color: #333;
-        top: 50px; /* Adjust based on header height */
-        right: 0;
-        width: 200px; /* Set width for the menu */
+    .hero h1 {
+        font-size: 2.5em;
     }
-
-    .menu-toggle {
-        display: block; /* Show the button on smaller screens */
+    .cta-button {
+        font-size: 1.2em;
     }
-
-    nav.visible {
-        display: flex; /* Show nav when toggled */
+}
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2em;
     }
-
-    nav ul {
-        flex-direction: column; /* Stack links vertically */
-        width: 100%; /* Full width */
+    .destinations {
+        flex-direction: column;
+        align-items: center;
     }
-
-    nav ul li {
-        margin: 10px 0; /* Vertical spacing */
+    .destination {
+        width: 90%;
     }
 }
 
@@ -104,6 +94,16 @@ nav a:hover {
 }
 .hero.ChiangRai {
     background: url(https://images.pexels.com/photos/14094477/pexels-photo-14094477.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2) no-repeat center center/cover;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+.hero.Khaoyai {
+    background: url(https://cdn.pixabay.com/photo/2013/10/22/02/56/landscape-199188_1280.jpg) no-repeat center center/cover;
     height: 50vh;
     display: flex;
     align-items: center;
