@@ -92,6 +92,96 @@ nav a:hover {
     text-align: center;
     position: relative;
 }
+.hero.kohchang {
+    background: url(https://images.unsplash.com/photo-1500878555357-5c67150cb136?q=80&w=2669&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) no-repeat center center/cover;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+.hero.kohphangan {
+    background: url(https://images.unsplash.com/photo-1579554632071-cffdaad3738c?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) no-repeat center center/cover;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+.hero.kohtao {
+    background: url(https://images.unsplash.com/photo-1715357581572-2688dc7ace2a?q=80&w=2532&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) no-repeat center center/cover;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+.hero.khaosok{
+    background: url(https://images.pexels.com/photos/10849906/pexels-photo-10849906.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) no-repeat center center/cover;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+.hero.Kohsamui {
+    background: url(https://images.unsplash.com/photo-1698312178456-ef326fe34b20?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) no-repeat center center/cover;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+.hero.huahin {
+    background: url(https://images.unsplash.com/photo-1677053694723-b13b41063f92?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) no-repeat center center/cover;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+.hero.kanchanaburi {
+    background: url(https://images.pexels.com/photos/23876564/pexels-photo-23876564/free-photo-of-waterfall-and-river-in-sai-yok-national-park-in-thailand.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) no-repeat center center/cover;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+.hero.khaolak {
+    background: url(https://cdn.pixabay.com/photo/2020/01/27/18/45/khao-lak-4798047_1280.jpg) no-repeat center center/cover;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+.hero.Phuket {
+    background: url(https://cdn.pixabay.com/photo/2017/06/19/14/10/thailand-2419443_1280.jpg) no-repeat center center/cover;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
 .hero.ChiangRai {
     background: url(https://images.pexels.com/photos/14094477/pexels-photo-14094477.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2) no-repeat center center/cover;
     height: 50vh;
@@ -153,6 +243,16 @@ nav a:hover {
     position: relative;
 }.hero.krabi {
     background: url(https://cdn.pixabay.com/photo/2014/10/15/09/50/sunset-489427_1280.jpg) no-repeat center center/cover;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+.hero.phiphi {
+    background: url(https://cdn.pixabay.com/photo/2019/10/17/01/09/island-4555696_1280.jpg) no-repeat center center/cover;
     height: 50vh;
     display: flex;
     align-items: center;
